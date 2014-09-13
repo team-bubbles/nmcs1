@@ -14,3 +14,38 @@
   width: 100%;
   z-index: 3;
 }
+
+#Menu{
+    width: 100%;
+    margin-bottom: 1.5em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    position: fixed;
+    
+    text-align: center;
+    background-color: #888888;
+    display: block;
+    font-size: 20px;
+}
+
+nav a{
+    
+    padding: 2.5em;
+    color: #eeeeee;
+}
+
+#icon{
+    padding-top: 1.5em;
+    background-image: url(../img/sprinklesCW.png);
+    background-repeat: no-repeat;
+}
+
+#menuIcon{
+    background-image: url(../img/menuS.png);
+    background-repeat: no-repeat;
+    position: fixed;
+    padding-top: 5em;
+    padding-right: 5em;
+    margin-left: 1.5em;
+    top: 13%;
+}
