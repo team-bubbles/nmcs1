@@ -48,4 +48,5 @@ nav a{
     padding-right: 5em;
     margin-left: 1.5em;
     top: 13%;
+    cursor: pointer;
 }
