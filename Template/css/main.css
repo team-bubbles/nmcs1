@@ -1,3 +1,4 @@
+/*** Setup ***/
 #LAYER_ALL {
   position: absolute;
   width: 100%;
@@ -14,6 +15,7 @@
   width: 100%;
   z-index: 3;
 }
+/*** Projects ***/
 #header {
   position: absolute;
   width: 100%;
@@ -32,6 +34,22 @@
   position: absolute;
   top: 480px;
 }
+.project-image {
+  width: 960px;
+  height: 240px;
+  overflow: hidden;
+  display:inline-block;
+}
+.project-description {
+  height: 240px;
+}
+.description-at-right > .project-description {
+  float: left;
+}
+.description-at-left > .project-image {
+  float: left;
+}
+/*** Menu ***/
 #Menu{
     width: 100%;
     margin-bottom: 1.5em;
@@ -46,7 +64,6 @@
 }
 
 nav a{
-    
     padding: 2.5em;
     color: #eeeeee;
 }
