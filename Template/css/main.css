@@ -74,13 +74,79 @@ nav a{
     background-repeat: no-repeat;
 }
 
-#menuIcon{
+#menuBTN{
     background-image: url(../img/menuS.png);
     background-repeat: no-repeat;
     position: fixed;
-    padding-top: 5em;
-    padding-right: 5em;
+    top:1.5em;
+    padding-bottom: 2.5em;
+    padding-top: 1em;
     margin-left: 1.5em;
-    top: 7em;
+    
     cursor: pointer;
+    visibility: visible;
+}
+
+#leftArrow, #rightArrow{
+    position: fixed;
+    background-repeat: no-repeat;
+}
+
+#menuNav{
+    margin-top: 3em;
+    visibility: hidden;
+    
+}
+
+
+
+/*My Overlay Menu Try */
+.overlayMenu{
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0s 0.5s;
+}
+
+.overlayMenu.open{
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s;
+    width: 80%;
+    height: 100%;
+    display: block;
+    background: #333;
+    z-index: 9003;
+}
+
+.overlayMenu nav{
+    /*
+    perspective: 1200px;
+    */
+    display: block;
+    width: 80%;
+    height: 100%;
+    background: #333333;
+    z-index: 9003;
+}
+
+.overlayMenu nav ul{
+    /*opacity: 0.4;*/
+    transform: translateY(-25%) rotateX(35deg);
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.overlayMenu.open nav ul{
+    opacity: 1;
+    transform: rotateX(0deg);
+}
+
+.overlayMenu.close nav ul{
+    transform: translateY(25%) rotateX(-35deg);
+}
+
+#prBox{
+    width: 80%;
+    height: 100%;
+    display: block;
+    background: #333;
 }

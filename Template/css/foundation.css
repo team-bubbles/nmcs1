@@ -4396,7 +4396,9 @@ ul.off-canvas-list {
       background: rgba(255, 255, 255, 0.05); } }
 
 .no-csstransforms .left-off-canvas-menu {
-  left: -15.625rem; }
+  left: -15.625rem;
+    
+}
 .no-csstransforms .right-off-canvas-menu {
   right: -15.625rem; }
 .no-csstransforms .move-left > .inner-wrap {
