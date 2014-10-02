@@ -1,3 +1,7 @@
+/*** Foundation base tweak ***/
+.columns {
+	padding: 0px !important;
+}
 /*** Setup ***/
 * {
 	font-family: 'Droid Sans', sans-serif;
@@ -44,7 +48,7 @@
 .project {
 	height: 50%;
 }
-.project > h2 {
+.project > figcaption {
 	font-weight: 700;
 	color: #878787;
 	top: 20%;

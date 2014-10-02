@@ -196,10 +196,11 @@ svg:not(:root) {
 
 /**
  * Address margin not present in IE 8/9 and Safari.
+ * [CUSTOMIZE] Remove margin. Who needs them these days?
  */
 
 figure {
-  margin: 1em 40px;
+  margin: 0;
 }
 
 /**
