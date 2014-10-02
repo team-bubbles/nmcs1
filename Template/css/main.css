@@ -112,6 +112,7 @@ nav a{
     opacity: 1;
     visibility: visible;
     transition: opacity 0.5s, visibility 0s 0.5s;
+	transition-duration:1.5;
     width: 80%;
     height: 100%;
     display: block;
@@ -152,6 +153,8 @@ nav a{
 
 #closeBTN{
 float: right;
+background-repeat: no-repeat;
+background-image: url(../img/x-button.png);
 }
 
 #prBox{
