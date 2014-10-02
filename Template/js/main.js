@@ -15,6 +15,7 @@
     }
     
     function setupUI(){
+		//Overlay Buttons
         document.querySelector("#menuBTN").onclick = function(){
             //if(overlayOn == false){
             //    overlayOn = true;
@@ -22,19 +23,21 @@
             document.getElementById("menuBTN").style.visibility = 'hidden';
             //}        
         };
-        
         document.querySelector("#closeBTN").onclick = function(){
             //if(overlayOn == true){
             document.getElementById("overlayBase").className = "overlayMenu"; 
             document.getElementById("menuBTN").style.visibility = 'visible';
             //}
         };
+		
+		
+		//Arrow Buttons ---- Hook up the slider code here
+		document.querySelector("#leftArrow").onclick = function(){
+			//console.log("Lefty");
+		};
+		document.querySelector("#rightArrow").onclick = function(){
+			//console.log("Righty");
+		};
     }
-    
-    
-    function toggleOverlay(){
-    }
-    
-    
     window.addEventListener("load", init);
 }());

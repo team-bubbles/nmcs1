@@ -132,25 +132,32 @@ width: 5.7%;
     
 }
 
-
-
 /*My Overlay Menu */
 .overlayMenu{
     opacity: 0;
     visibility: hidden;
+	display: block;
+	/*
+	transition-property: left;
     transition: opacity 0.7s, visibility 0s 0.7s;
+	*/
+	
+	transition:all 1.0s ease-in-out;
 }
 
 .overlayMenu.open{
     opacity: 1;
     visibility: visible;
+	/*
+	transition-property: left;
     transition: opacity 0.5s, visibility 0s 0.5s;
 	transition-duration:1.5;
+	*/
     width: 80%;
     height: 100%;
     display: block;
     background: #333;
-    z-index: 9003;
+	
 }
 
 .overlayMenu nav{
@@ -161,21 +168,6 @@ width: 5.7%;
 	text-align: center;
 	font-size: 35px;
     z-index: 9003;
-}
-
-.overlayMenu nav ul{
-    /*opacity: 0.4;*/
-    transform: translateY(-25%) rotateX(35deg);
-    transition: transform 0.5s, opacity 0.5s;
-}
-
-.overlayMenu.open nav ul{
-    opacity: 1;
-    transform: rotateX(0deg);
-}
-
-.overlayMenu.close nav ul{
-    transform: translateY(25%) rotateX(-35deg);
 }
 
 .navA{
