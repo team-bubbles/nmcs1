@@ -105,7 +105,7 @@ nav a{
 
 
 
-/*My Overlay Menu Try */
+/*My Overlay Menu */
 .overlayMenu{
     opacity: 0;
     visibility: hidden;
@@ -115,7 +115,7 @@ nav a{
 .overlayMenu.open{
     opacity: 1;
     visibility: visible;
-    transition: opacity 0.5s;
+    transition: opacity 0.5s, visibility 0s 0.5s;
     width: 80%;
     height: 100%;
     display: block;
@@ -124,13 +124,12 @@ nav a{
 }
 
 .overlayMenu nav{
-    /*
-    perspective: 1200px;
-    */
     display: block;
     width: 80%;
     height: 100%;
     background: #333333;
+	text-align: center;
+	font-size: 35px;
     z-index: 9003;
 }
 
@@ -149,8 +148,18 @@ nav a{
     transform: translateY(25%) rotateX(-35deg);
 }
 
+.navA{
+	text-align: center;
+	font-size: 32px;
+	display: block;
+}
+
+#closeBTN{
+float: right;
+}
+
 #prBox{
-		position: fixed;
+	position: fixed;
     width: 80%;
     height: 100%;
     display: block;
