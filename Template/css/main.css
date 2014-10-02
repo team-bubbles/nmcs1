@@ -79,23 +79,52 @@ nav a{
     background-repeat: no-repeat;
 }
 
+/* Button Style */
 #menuBTN{
+	background:none;
     background-image: url(../img/menuS.png);
     background-repeat: no-repeat;
     position: fixed;
-    top:1.5em;
+    top:2em;
     padding-bottom: 2.5em;
-    padding-top: 1em;
+    padding-top: 2em;
     margin-left: 1.5em;
     
     cursor: pointer;
     visibility: visible;
 }
 
-#leftArrow, #rightArrow{
-    position: fixed;
+#closeBTN{
+float: right;
+background-repeat: no-repeat;
+background: #333;
+background-image: url(../img/x-button.png);
+display: block;
+height: 9%;
+width: 5.7%;
+}
+
+#BTNControl{
+	float:right;
+	position: fixed;
+	padding-left: 2em;
+	padding-top: 2em;
+	text-align:right;
+	overflow:auto;
+	margin-left: 95em;
+
+}
+
+#leftArrow{
+	background:#666;
     background-repeat: no-repeat;
 }
+#rightArrow{
+	background:#666;
+    background-repeat: no-repeat;
+}
+
+/*End BTN */
 
 #menuNav{
     margin-top: 3em;
@@ -153,12 +182,6 @@ nav a{
 	text-align: center;
 	font-size: 32px;
 	display: block;
-}
-
-#closeBTN{
-float: right;
-background-repeat: no-repeat;
-background-image: url(../img/x-button.png);
 }
 
 #prBox{
