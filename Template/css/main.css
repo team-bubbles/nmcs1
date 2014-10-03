@@ -22,6 +22,12 @@
   width: 100%;
   z-index: 3;
 }
+
+
+
+
+
+
 /*** Projects ***/
 #header {
   position: absolute;
@@ -42,17 +48,103 @@
 #projects-wrapper {
   position: relative;
   top: 100%;
-	
+	overflow: hidden;
 	margin: 0 0 0 0 !important;
 }
 .project {
-	height: 50%;
+	background: #42b078;
+	text-align: center;
+	cursor: pointer;
+	overflow: hidden;
+	height: 400px;
 }
-.project > figcaption {
+.project > img{
+	position: relative;
+	display: block;
+	opacity: 0.8;
+	max-width: none; /*Clear out Foundation style*/
+	
+ 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: translate3d(-10px,0,0);
+	transform: translate3d(-10px,0,0);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+.project:hover > img{
+	opacity: 0.4;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+.project figcaption {
+	position: absolute;
+	padding: 2em;
+	font-weight: 400;
+	color: white;
+	text-transform: uppercase;
+	font-size: 1.25em;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: left;
+}
+.project figcaption h2, .project figcaption span {
+	color: white;
 	font-weight: 700;
-	color: #878787;
-	top: 20%;
 }
+.project figcaption::before,
+.project figcaption::after {
+	pointer-events: none;
+}
+.project a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+.project h2 {
+	position: relative;
+	overflow: hidden;
+}
+/* Reveal the bar under title */
+.project h2::after {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	background: #fff;
+	content: ''; /* hack */
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+	-webkit-transform: translate3d(-100%,0,0);
+	transform: translate3d(-100%,0,0);
+}
+.project:hover h2::after {
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+/* Transit in the paragraph */
+.project p {
+	padding: 1em 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: translate3d(100%,0,0);
+	transform: translate3d(100%,0,0);
+}
+.project:hover p {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+
+
+
+
 
 /*** Menu ***/
 #Menu{
