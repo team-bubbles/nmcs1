@@ -19,13 +19,13 @@
         document.querySelector("#menuBTN").onclick = function(){
             //if(overlayOn == false){
             //    overlayOn = true;
-            document.getElementById("overlayBase").className = "overlayMenu.open";
+            document.getElementById("prBox").className = "overlayMenu open";
             document.getElementById("menuBTN").style.visibility = 'hidden';
             //}        
         };
         document.querySelector("#closeBTN").onclick = function(){
             //if(overlayOn == true){
-            document.getElementById("overlayBase").className = "overlayMenu"; 
+            document.getElementById("prBox").className = "overlayMenu"; 
             document.getElementById("menuBTN").style.visibility = 'visible';
             //}
         };

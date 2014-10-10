@@ -33,7 +33,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #878787;
+  background-color: #604c71;
 }
 .header-text {
   position: absolute;
@@ -52,7 +52,7 @@
 	margin: 0 0 0 0 !important;
 }
 .project {
-	background: #42b078;
+	background: #604c71;
 	text-align: center;
 	cursor: pointer;
 	overflow: hidden;
@@ -61,7 +61,7 @@
 .project > img{
 	position: relative;
 	display: block;
-	opacity: 0.8;
+	opacity: 1;
 	max-width: none; /*Clear out Foundation style*/
 	
  	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
@@ -72,7 +72,7 @@
 	backface-visibility: hidden;
 }
 .project:hover > img{
-	opacity: 0.4;
+	opacity: 0.2;
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 }
@@ -220,61 +220,35 @@ nav a{
     
 }
 
-/*My Overlay Menu */
 .overlayMenu{
-    opacity: 0;
-/*    visibility: hidden;*/
-	display: none;
-    width: 0%;
-    height: 0%;
-	/*
-	transition-property: left;
-    transition: opacity 0.7s, visibility 0s 0.7s;
-	*/
-	
-	transition:all 1.0s ease-in-out;
+  opacity: 0;
+	left: -80%;
+	position: fixed;
+	width: 80%;
+	height: 100%;
+	display: block;
+	background: #333;
+	transition: all 0.3s ease-in-out;
 }
 
-.overlayMenu.open{
-    opacity: 1;
-    /*6
-    visibility: visible;
-	/*
-	transition-property: left;
-    transition: opacity 0.5s, visibility 0s 0.5s;
-	transition-duration:1.5;
-	*/
-    width: 80%;
-    height: 100%;
-    display: block;
-    background: #333;
-    
-    transform: width 1.0s ease-in-out;
-	
+#overlayBase .open{
+  opacity: 1;
+	left: 0%;
 }
-
 .overlayMenu nav{
-    display: block;
-    width: 80%;
-    height: 100%;
-    background: #333333;
+	display: block;
+	width: 80%;
+	height: 100%;
+	background: #333333;
 	text-align: center;
 	font-size: 35px;
-    z-index: 9003;
+  z-index: 9003;
 }
 
 .navA{
 	text-align: center;
 	font-size: 32px;
 	display: block;
-}
-
-#prBox{
-	position: fixed;
-    width: 80%;
-    height: 100%;
-    display: block;
-    background: #333;
 }
 
 body{
