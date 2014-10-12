@@ -177,10 +177,9 @@ nav a{
 
 .closeBTN{
     float: left;
-
     background: none;
     background-image: url(../img/xbtn.svg);
-        background-repeat: no-repeat;
+    background-repeat: no-repeat;
     display: block;
     height: 60px;
     width: 60px;
@@ -212,8 +211,9 @@ nav a{
 
 .gotoBTN{
     float: left;
-    margin-top: 38em;
     margin-left: 5em;
+    position: absolute;
+    top: 65%;
 }
 
 #leftArrow{
