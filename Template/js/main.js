@@ -40,14 +40,14 @@
         
         //Go to Projects Button
         document.querySelector('#gotoPro').onclick = function(){
-            
+            $('#projects-wrapper').ScrollTo();
         };
-        
-        //$("#gotoPro").click(function(){
-        //    $('html, body').animate({
-        //        scrollTo: $("projects-wrapper").offset().top
-        //    }, wh);
-        //});
     }
+    
+    //function projectsButton (){
+    //    var el = document.getElementById('#projects-wrapper');
+    //    el.scrollIntoView(true);
+    //}
+    
     window.addEventListener("load", init);
 }());
