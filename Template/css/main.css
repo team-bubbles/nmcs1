@@ -185,6 +185,7 @@ nav a{
     width: 60px;
     left: 80%;
     z-index: 9999;
+    position: fixed;
     transition: all 1s ease-in-out;
 }
 

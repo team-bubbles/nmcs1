@@ -17,7 +17,7 @@
       <div id="LAYER_MID">
         <div id="header">
             <div class="header-text">NOT HELLO!</div>
-            <button type="button" id="gotoPro" class="gotoBTN">Go to Projects</button>
+            <button type="button" id="gotoPro" class="gotoBTN" onclick="movetoEl('#projects-wrapper')">Go to Projects</button>
         </div>
         <div id="projects-wrapper">
           <figure class="project small-6 medium-4 columns" id="p1">
@@ -106,8 +106,8 @@
 				<div class="overlayMenu" id="prBox">
 					<!--button type="button" class="overlay-close" id="closeBTN"></button-->
 					<nav id="overlay nav">
-						<a href="#" class="navA">Home</a>
-						<a href="#" class="navA">Projects</a>
+						<a href="#" class="navA" onclick="movetoEl('#header')">Home</a>
+						<a href="#" class="navA" onclick="movetoEl('#projects-wrapper')">Projects</a>
 						<a href="#" class="navA">Contact</a>
 						<a href="#" class="navA">Resume</a>
 						<a href="#" class="navA">Work</a>

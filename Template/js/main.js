@@ -39,15 +39,18 @@
 		};
         
         //Go to Projects Button
-        document.querySelector('#gotoPro').onclick = function(){
-            $('#projects-wrapper').ScrollTo();
-        };
+        //document.querySelector('#gotoPro').onclick = function(){
+        //    $('#projects-wrapper').ScrollTo();
+        //};
     }
     
-    //function projectsButton (){
-    //    var el = document.getElementById('#projects-wrapper');
-    //    el.scrollIntoView(true);
-    //}
+    
     
     window.addEventListener("load", init);
 }());
+
+function movetoEl(elID){
+    var el = elID;
+    $(el).ScrollTo();
+    console.log(el);
+}
