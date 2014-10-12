@@ -172,7 +172,25 @@ nav a{
 
 /* Button Style */
 #menuBTN{
-	background:none;
+
+}
+
+.closeBTN{
+    float: left;
+
+    background: none;
+    background-image: url(../img/xbtn.svg);
+        background-repeat: no-repeat;
+    display: block;
+    height: 60px;
+    width: 60px;
+    left: 80%;
+    z-index: 9999;
+    transition: all 1s ease-in-out;
+}
+
+.openBTN{
+    background:none;
     background-image: url(../img/menuS.png);
     background-repeat: no-repeat;
     position: fixed;
@@ -180,19 +198,8 @@ nav a{
     padding-bottom: 2.5em;
     padding-top: 2em;
     margin-left: 1.5em;
-    
     cursor: pointer;
     visibility: visible;
-}
-
-#closeBTN{
-    float: right;
-    background-repeat: no-repeat;
-    background: #333;
-    background-image: url(../img/x-button.png);
-    display: block;
-    height: 9%;
-    width: 5.7%;
 }
 
 #BTNControl{
@@ -201,6 +208,12 @@ nav a{
 	padding-top: 2em;
 	text-align:right;
 	overflow:hidden;
+}
+
+.gotoBTN{
+    float: left;
+    margin-top: 38em;
+    margin-left: 5em;
 }
 
 #leftArrow{
@@ -221,7 +234,7 @@ nav a{
 }
 
 .overlayMenu{
-  opacity: 0;
+    opacity: 0;
 	left: -80%;
 	position: fixed;
 	width: 80%;
@@ -232,7 +245,7 @@ nav a{
 }
 
 #overlayBase .open{
-  opacity: 1;
+    opacity: 1;
 	left: 0%;
 }
 .overlayMenu nav{
@@ -242,7 +255,7 @@ nav a{
 	background: #333333;
 	text-align: center;
 	font-size: 35px;
-  z-index: 9003;
+    z-index: 9003;
 }
 
 .navA{
