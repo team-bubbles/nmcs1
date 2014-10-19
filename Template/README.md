@@ -1,3 +1,8 @@
+### Template Workflow
+
+The template now uses a collection of tools, tasks, and workflows to make development easier and code quality higher.
+
+Technologies include:
 - [Browserify](http://browserify.org/) (with [browserify-shim](https://github.com/thlorenz/browserify-shim))
 - [Watchify](https://github.com/substack/watchify) (caching version of browserify for super fast rebuilds)
 - [SASS](http://sass-lang.com/) (with [compass](http://compass-style.org/) and [source maps](https://github.com/sindresorhus/gulp-ruby-sass#sourcemap)!)
