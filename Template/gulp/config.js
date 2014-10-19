@@ -52,6 +52,7 @@ module.exports = {
       src + "/javascript/concat/app/jquery.js",
       src + "/javascript/concat/app/jquery-scrollto.js",
       src + "/javascript/concat/app/foundation.js",
+      src + "/javascript/concat/app/custom.js",
     ],
     dest: dest + "/js",
     outputName: 'concatedApp.js'
