@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Template</title>
+    <link rel="stylesheet" href="css/app.css" />
+    <script src="js/concatedHead.js"></script>
+    <script src="js/head.js"></script>
+  </head>
+
+  <body>
+
+    <div id="LAYER_ALL">
+      <div id="LAYER_MID">
+        <div id="header">
+            <div class="header-text">NOT HELLO!</div>
+            <button type="button" id="gotoPro" class="gotoBTN" onclick="movetoEl('#projects-wrapper')">Go to Projects</button>
+        </div>
+        <div id="projects-wrapper">
+          <figure class="project small-6 medium-4 columns" id="p1">
+            <img src="http://placekitten.com/640/400" alt="img01"/>
+            <figcaption>
+                <h2>Project <span>One</span></h2>
+                <p>Horrorsphere reveals Samuel Jackson's left skull</p>
+                <a href="#" class="boxExpand">View more</a>
+            </figcaption>
+          </figure>
+          <figure class="project small-6 medium-4 columns" id="p2">
+            <img src="http://placekitten.com/640/450" alt="img01"/>
+            <figcaption>
+                <h2>Project <span>Two</span></h2>
+                <p>Horrorsphere reveals Samuel Jackson's left skull</p>
+                <a href="#" class="boxExpand">View more</a>
+            </figcaption>
+          </figure>
+          <figure class="project small-6 medium-4 columns" id="p3">
+            <img src="http://placekitten.com/640/500" alt="img01"/>
+            <figcaption>
+                <h2>Project <span>Three</span></h2>
+                <p>Horrorsphere reveals Samuel Jackson's left skull</p>
+                <a href="#" class="boxExpand">View more</a>
+            </figcaption>
+          </figure>
+          <figure class="project small-6 medium-4 columns" id="p4">
+            <img src="http://placekitten.com/600/500" alt="img01"/>
+            <figcaption>
+                <h2>Project <span>Four</span></h2>
+                <p>Horrorsphere reveals Samuel Jackson's left skull</p>
+                <a href="#" class="boxExpand">View more</a>
+            </figcaption>
+          </figure>
+          <figure class="project small-6 medium-4 columns" id="p5">
+            <img src="http://placekitten.com/600/520" alt="img01"/>
+            <figcaption>
+                <h2>Project <span>Five</span></h2>
+                <p>Horrorsphere reveals Samuel Jackson's left skull</p>
+                <a href="#" class="boxExpand">View more</a>
+            </figcaption>
+          </figure>
+          <figure class="project small-6 medium-4 columns" id="p6">
+            <img src="http://placekitten.com/640/510" alt="img01"/>
+            <figcaption>
+                <h2>Project <span>Six</span></h2>
+                <p>Horrorsphere reveals Samuel Jackson's left skull</p>
+                <a href="#" class="boxExpand">View more</a>
+            </figcaption>
+          </figure>
+          <figure class="project small-6 medium-4 columns" id="p7">
+            <img src="http://placekitten.com/640/530" alt="img01"/>
+            <figcaption>
+                <h2>Project <span>Seven</span></h2>
+                <p>Horrorsphere reveals Samuel Jackson's left skull</p>
+                <a href="#" class="boxExpand">View more</a>
+            </figcaption>
+          </figure>
+          <figure class="project small-6 medium-4 columns" id="p8">
+            <img src="http://placekitten.com/640/634" alt="img01"/>
+            <figcaption>
+                <h2>Project <span>Eight</span></h2>
+                <p>Horrorsphere reveals Samuel Jackson's left skull</p>
+                <a href="#" class="boxExpand">View more</a>
+            </figcaption>
+          </figure>
+          <figure class="project small-6 medium-4 columns" id="p9">
+            <img src="http://placekitten.com/640/560" alt="img01"/>
+            <figcaption>
+                <h2>Project <span>Nigh</span></h2>
+                <p>Horrorsphere reveals Samuel Jackson's left skull</p>
+                <a href="#" class="boxExpand">View more</a>
+            </figcaption>
+          </figure>
+        </div><!-- End Project Wrapper Div -->
+        </div><!-- Layer Mid End -->
+        <div id="LAYER_TOP">
+
+    <!-- Buttons -->
+            <button type="button" id="menuBTN" class="openBTN"></button>
+            <div id="BTNControl">
+                <button type="button" id="leftArrow"><</button>
+                <button type="button" id="rightArrow">></button>
+            </div>
+      <div id="overlayBase">
+        <div class="overlayMenu" id="prBox">
+          <!--button type="button" class="overlay-close" id="closeBTN"></button-->
+          <nav id="overlay nav">
+            <a href="#" class="navA" onclick="movetoEl('#header')">Home</a>
+            <a href="#" class="navA" onclick="movetoEl('#projects-wrapper')">Projects</a>
+            <a href="#" class="navA">Contact</a>
+            <a href="#" class="navA">Resume</a>
+            <a href="#" class="navA">Work</a>
+          </nav>
+        </div> <!-- End ProperBox Div -->
+      </div> <!-- End Overlay Menu -->
+        </div>  <!-- Layer Top End -->
+    </div> <!-- Layer All End -->
+    <script src="js/concatedApp.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
