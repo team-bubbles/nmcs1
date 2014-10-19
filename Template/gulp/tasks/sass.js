@@ -8,7 +8,7 @@ gulp.task('sass', ['images'], function () {
     .pipe(sass({
       compass: true,
       bundleExec: false,
-      sourcemap: true,
+      trace: true,
       sourcemapPath: '../sass'
     }))
     .on('error', handleErrors)
