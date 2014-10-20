@@ -1,4 +1,7 @@
-/*** Concatinates all non-modules ***/
+/*** Concatinates all non-modules
+ * The output is intended to concat all plugins, custom scripts, etc.
+ * that weren't able to be integrated into the browserify workflow
+ ***/
 
 var gulp  = require('gulp');
 var config= require('../config');

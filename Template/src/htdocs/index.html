@@ -17,77 +17,85 @@
             <div class="header-text">NOT HELLO!</div>
             <button type="button" id="gotoPro" class="gotoBTN" onclick="movetoEl('#projects-wrapper')">Go to Projects</button>
         </div>
+
+        <div id="project-detail">
+          <!-- Populated with template -->
+          <div class="content">
+
+          </div>
+        </div>
+
         <div id="projects-wrapper">
-          <figure class="project small-6 medium-4 columns" id="p1">
+          <figure class="project small-6 medium-4 columns" data-hash="/project/pro1">
             <img src="http://placekitten.com/640/400" alt="img01"/>
             <figcaption>
                 <h2>Project <span>One</span></h2>
                 <p>Horrorsphere reveals Samuel Jackson's left skull</p>
-                <a href="#" class="boxExpand">View more</a>
+                <a href="#/project/pro1" class="boxExpand">View more</a>
             </figcaption>
           </figure>
-          <figure class="project small-6 medium-4 columns" id="p2">
+          <figure class="project small-6 medium-4 columns" data-hash="/project/pro2">
             <img src="http://placekitten.com/640/450" alt="img01"/>
             <figcaption>
                 <h2>Project <span>Two</span></h2>
                 <p>Horrorsphere reveals Samuel Jackson's left skull</p>
-                <a href="#" class="boxExpand">View more</a>
+                <a href="#/project/pro2" class="boxExpand">View more</a>
             </figcaption>
           </figure>
-          <figure class="project small-6 medium-4 columns" id="p3">
+          <figure class="project small-6 medium-4 columns" data-hash="/project/pro3">
             <img src="http://placekitten.com/640/500" alt="img01"/>
             <figcaption>
                 <h2>Project <span>Three</span></h2>
                 <p>Horrorsphere reveals Samuel Jackson's left skull</p>
-                <a href="#" class="boxExpand">View more</a>
+                <a href="#/project/pro3" class="boxExpand">View more</a>
             </figcaption>
           </figure>
-          <figure class="project small-6 medium-4 columns" id="p4">
+          <figure class="project small-6 medium-4 columns" data-hash="/project/pro4">
             <img src="http://placekitten.com/600/500" alt="img01"/>
             <figcaption>
                 <h2>Project <span>Four</span></h2>
                 <p>Horrorsphere reveals Samuel Jackson's left skull</p>
-                <a href="#" class="boxExpand">View more</a>
+                <a href="#/project/pro4" class="boxExpand">View more</a>
             </figcaption>
           </figure>
-          <figure class="project small-6 medium-4 columns" id="p5">
+          <figure class="project small-6 medium-4 columns" data-hash="/project/pro5">
             <img src="http://placekitten.com/600/520" alt="img01"/>
             <figcaption>
                 <h2>Project <span>Five</span></h2>
                 <p>Horrorsphere reveals Samuel Jackson's left skull</p>
-                <a href="#" class="boxExpand">View more</a>
+                <a href="#/project/pro5" class="boxExpand">View more</a>
             </figcaption>
           </figure>
-          <figure class="project small-6 medium-4 columns" id="p6">
+          <figure class="project small-6 medium-4 columns" data-hash="/project/pro6">
             <img src="http://placekitten.com/640/510" alt="img01"/>
             <figcaption>
                 <h2>Project <span>Six</span></h2>
                 <p>Horrorsphere reveals Samuel Jackson's left skull</p>
-                <a href="#" class="boxExpand">View more</a>
+                <a href="#/project/pro6" class="boxExpand">View more</a>
             </figcaption>
           </figure>
-          <figure class="project small-6 medium-4 columns" id="p7">
+          <figure class="project small-6 medium-4 columns" data-hash="/project/pro7">
             <img src="http://placekitten.com/640/530" alt="img01"/>
             <figcaption>
                 <h2>Project <span>Seven</span></h2>
                 <p>Horrorsphere reveals Samuel Jackson's left skull</p>
-                <a href="#" class="boxExpand">View more</a>
+                <a href="#/project/pro7" class="boxExpand">View more</a>
             </figcaption>
           </figure>
-          <figure class="project small-6 medium-4 columns" id="p8">
+          <figure class="project small-6 medium-4 columns" data-hash="/project/pro8">
             <img src="http://placekitten.com/640/634" alt="img01"/>
             <figcaption>
                 <h2>Project <span>Eight</span></h2>
                 <p>Horrorsphere reveals Samuel Jackson's left skull</p>
-                <a href="#" class="boxExpand">View more</a>
+                <a href="#/project/pro8" class="boxExpand">View more</a>
             </figcaption>
           </figure>
-          <figure class="project small-6 medium-4 columns" id="p9">
+          <figure class="project small-6 medium-4 columns" data-hash="/project/pro9">
             <img src="http://placekitten.com/640/560" alt="img01"/>
             <figcaption>
                 <h2>Project <span>Nigh</span></h2>
                 <p>Horrorsphere reveals Samuel Jackson's left skull</p>
-                <a href="#" class="boxExpand">View more</a>
+                <a href="#/project/pro9" class="boxExpand">View more</a>
             </figcaption>
           </figure>
         </div><!-- End Project Wrapper Div -->
@@ -114,11 +122,24 @@
       </div> <!-- End Overlay Menu -->
         </div>  <!-- Layer Top End -->
     </div> <!-- Layer All End -->
+    <!-- Preload 404 message -->
+    <script id="404" type="text/html">
+      <div id="404" class="content">
+        <div class="page-header">
+          <h1>404</h1>
+        </div>
+        <div class="row">
+          <div class="span14">
+            <p>This is not the content you are looking for.</p>
+          </div>
+        </div>
+      </div>
+    </script>
     <script src="js/concatedApp.js"></script>
     <script>
       $(document).foundation();
     </script>
     <script src="js/app.js"></script>
-    
+
   </body>
 </html>

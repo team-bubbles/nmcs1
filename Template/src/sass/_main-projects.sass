@@ -94,3 +94,19 @@
     p
       opacity: 1
       transform: translate3d(0,0,0)
+
+#project-detail
+  position: relative
+  top: 100%
+  transition: all 0.45s ease
+
+  .content
+    transition: all 0.45s ease
+    opacity: 0
+    transform: translate3d(0,0,50%)
+
+  .page-active
+    opacity: 1
+
+  .page-nonactive
+    opacity: 0

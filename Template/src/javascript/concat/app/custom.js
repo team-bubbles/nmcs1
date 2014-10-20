@@ -7,7 +7,6 @@
 
     function init(){
         setupUI();
-        console.log('inited!');
     }
 
     function setupUI(){

@@ -40,7 +40,8 @@
     "watchify": "~1.0.2"
   },
   "dependencies": {
-    "backbone": "~1.1.2",
-    "jquery": "~2.1.0"
+    "backbone": "^1.1.2",
+    "jquery": "~2.1.0",
+    "nprogress": "^0.1.6"
   }
 }
