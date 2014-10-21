@@ -1,3 +1,5 @@
+$menu-bg-color: #1A1A1A
+
 #Menu
   width: 100%
   margin-bottom: 1.5em
@@ -9,40 +11,12 @@
   display: block
   font-size: 20px
 
-nav
-  a
-    padding: 2.5em
-    color: #eeeeee
-
 #icon
   padding-top: 1.5em
   background-image: url(../img/sprinklesCW.png)
   background-repeat: no-repeat
 
-/* Button Style */
-.closeBTN
-  float: left
-  background: none
-  background-image: url(../img/xbtn.svg)
-  background-repeat: no-repeat
-  display: block
-  height: 60px
-  width: 60px
-  left: 80%
-  position: fixed
-  transition: all 1s ease-in-out
-
-.openBTN
-  background: none
-  background-image: url(../img/menuS.png)
-  background-repeat: no-repeat
-  position: fixed
-  top: 2em
-  padding-bottom: 2.5em
-  padding-top: 2em
-  margin-left: 1.5em
-  cursor: pointer
-  visibility: visible
+/* Button Style. Hiding the nav buttons for later implementation */
 
 #BTNControl
   position: fixed
@@ -60,6 +34,38 @@ nav
   background: #666
   background-repeat: no-repeat
 
+#menuBTN
+  position: absolute
+  top: 46px
+  left: 110%
+  left: calc(100% + 60px)
+  pointer-events: all
+  cursor: pointer
+  .svg-menu-toggle
+    fill: #fff
+    .bar
+      transform: rotate(0) translateY(0) translateX(0)
+      opacity: 1
+      transform-origin: 20px 10px
+      transition: transform 0.4s ease-in-out, opacity 0.2s ease-in-out, fill .4s ease-in-out
+
+    .bar:nth-of-type(1)
+      transform-origin: 20px 10px
+    .bar:nth-of-type(3)
+      transform-origin: 20px 20px
+
+#menuBTN.active
+  left: 110%
+  .svg-menu-toggle
+    .bar:nth-of-type(1)
+      transform: rotate(-45deg) translateY(-10px) translateX(-8px)
+
+    .bar:nth-of-type(2)
+      opacity: 0
+
+    .bar:nth-of-type(3)
+      transform: rotate(45deg) translateY(6px) translateX(0px)
+
 
 /*End BTN */
 
@@ -68,28 +74,34 @@ nav
   visibility: hidden
 
 .overlayMenu
-  opacity: 0
   left: -80%
   position: fixed
   width: 80%
   height: 100%
   display: block
-  background: #333
+  background: $menu-bg-color
   transition: all 0.3s ease-in-out
 
-#overlayBase .open
-  opacity: 1
+.overlayMenu.open
   left: 0%
 
-.overlayMenu nav
-  display: block
-  width: 80%
-  height: 100%
-  background: #333333
-  text-align: center
-  font-size: 35px
-
-.navA
-  text-align: center
-  font-size: 32px
-  display: block
+nav
+  font-size: 1.3em
+  margin-top: 10%
+  a
+    text-align: center
+    display: block
+    padding: 1.3em
+    color: #fff
+    .underline
+      position: relative
+      display: block
+      overflow: hidden
+      left: 46%
+      top: 1.1em
+      width: 8%
+      height: 4px
+      background-color: #a8a8a8
+  a.category
+    color: #A8A8A8
+    font-weight: 700

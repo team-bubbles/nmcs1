@@ -1,7 +1,6 @@
 
 (function(){
     'use strict';
-    var overlayOn = false;
     var ww = window.innerWidth;
     var wh = window.innerHeight;
 
@@ -12,15 +11,15 @@
     function setupUI(){
     //Overlay Buttons
         document.querySelector("#menuBTN").onclick = function(){
-            if(overlayOn == false){
-                overlayOn = true;
+
+              console.log(this);
+            if(this.className == ""){
                 document.getElementById("prBox").className = "overlayMenu open";
-                document.getElementById("menuBTN").className = "closeBTN";
+                this.className = "active";
             }
-            else{
-                overlayOn = false;
+            else if (this.className == "active"){
                 document.getElementById("prBox").className = "overlayMenu";
-                document.getElementById("menuBTN").className = "openBTN";
+                this.className = "";
             }
         };
 

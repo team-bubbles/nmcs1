@@ -1,63 +1,61 @@
 #header
-  position: absolute
-  width: 100%
-  height: 100%
+  height: 100vh
   background-color: $bg-color
 
-#header-content
-  position: absolute
-  bottom: 20%
-  left: 72px
-  *
-    color: white
+  #header-content
+    position: absolute
+    bottom: 20%
+    left: 72px
+    *
+      color: white
 
-  .title
-    font-weight: $bold
-    font-size: 90px
-    line-height: 90px
-    //width: 100% Cause Overflow bug at lower resolutions
+    .title
+      font-weight: $bold
+      font-size: 90px
+      line-height: 90px
+      //width: 100% Cause Overflow bug at lower resolutions
 
-    .underline
-      position: absolute
-      display: block
-      overflow: hidden
-      left: 0
-      top: 1.1em
-      width: 43px
-      height: 4px
-      background-color: #fff
+      .underline
+        position: absolute
+        display: block
+        overflow: hidden
+        left: 0
+        top: 1.1em
+        width: 43px
+        height: 4px
+        background-color: #fff
 
-  .subtitle
-    margin-top: 1.4em
-    font-size: 20px
+    .subtitle
+      margin-top: 1.4em
+      font-size: 20px
 
-  .button-3d
-    $btnW: 8em
-    $btnH: 3em
-    margin-top: 3em
-    cursor: pointer
-    transition: all 0.85s cubic-bezier(.17,.67,.14,.93)
-    transform-style: preserve-3d
-    transform-origin: 100% 50%
-    width: $btnW
-    height: $btnH
-    &:hover
-      transform: rotateX(-90deg)
-    .side
-      box-sizing: border-box
-      position: absolute
-      display: inline-block
+    .button-3d
+      $btnW: 8em
+      $btnH: 3em
+      margin-top: 3em
+      cursor: pointer
+      transition: all 0.85s cubic-bezier(.17,.67,.14,.93)
+      transform-style: preserve-3d
+      transform-origin: 100% 50%
       width: $btnW
       height: $btnH
-      text-align: center
-      padding-top: .7em
-    .top
-      background: #fff
-      color: $bg-color
-      transform: rotateX(90deg) translate3d(0, 0, $btnH/2)
-    .front
-      box-shadow: inset 0 0 0 2px #fff
-      transform: translate3d(0, 0, $btnH/2)
+      &:hover
+        transform: rotateX(-90deg)
+      .side
+        box-sizing: border-box
+        position: absolute
+        display: inline-block
+        width: $btnW
+        height: $btnH
+        text-align: center
+        padding-top: .7em
+      .top
+        background: #fff
+        color: $bg-color
+        transform: rotateX(90deg) translate3d(0, 0, $btnH/2)
+      .front
+        box-shadow: inset 0 0 0 2px #fff
+        transform: translate3d(0, 0, $btnH/2)
 
 
 
@@ -65,8 +63,6 @@
 
 
 #projects-wrapper
-  position: relative
-  top: 100%
   overflow: hidden
   margin: 0 0 0 0 !important
 
@@ -144,19 +140,3 @@
     p
       opacity: 1
       transform: translate3d(0,0,0)
-
-#project-detail
-  position: relative
-  top: 100%
-  transition: all 0.45s ease
-
-  .content
-    transition: all 0.45s ease
-    opacity: 0
-    transform: translate3d(0,0,50%)
-
-  .page-active
-    opacity: 1
-
-  .page-nonactive
-    opacity: 0

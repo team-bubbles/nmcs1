@@ -87,7 +87,9 @@ module.exports = Backbone.Router.extend({
       router.clear();
     }
 
-
+		// [TODO] [REFACTOR] quick code to hide the menu whenever switching view
+		document.getElementById("prBox").className = "overlayMenu";
+		document.getElementById("menuBTN").className = "";
 	},
 
   clear: function(){

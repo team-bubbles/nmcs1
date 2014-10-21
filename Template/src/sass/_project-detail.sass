@@ -1,0 +1,90 @@
+// Page specific ones
+// [TODO] FUCK IT WE DOING THIS WET
+
+#project-detail
+  transition: all 0.45s ease
+  .content
+    $btnW: 14em
+    $btnH: 3em
+    opacity: 0
+    transition: all 0.45s ease
+    .project-header
+      height: 100vh
+      .header-content
+        position: relative
+        bottom: -40%
+        left: 72px
+        *
+          color: white
+
+        .title
+          font-weight: $bold
+          font-size: 90px
+          line-height: 90px
+          //width: 100% Cause Overflow bug at lower resolutions
+
+          .underline
+            position: absolute
+            display: block
+            overflow: hidden
+            left: 0
+            top: 1.1em
+            width: 43px
+            height: 4px
+            background-color: #fff
+
+        .subtitle
+          margin-top: 1.4em
+          font-size: 20px
+
+        .button-3d
+
+          margin-top: 3em
+          cursor: pointer
+          transition: all 0.85s cubic-bezier(.17,.67,.14,.93)
+          transform-style: preserve-3d
+          transform-origin: 100% 50%
+          width: $btnW
+          height: $btnH
+          &:hover
+            transform: rotateX(-90deg)
+          .side
+            box-sizing: border-box
+            position: absolute
+            display: inline-block
+            width: $btnW
+            height: $btnH
+            text-align: center
+            padding-top: .7em
+          .top
+            background: #fff
+            color: $bg-color
+            transform: rotateX(90deg) translate3d(0, 0, $btnH/2)
+          .front
+            box-shadow: inset 0 0 0 2px #fff
+            transform: translate3d(0, 0, $btnH/2)
+
+  .page-active
+    opacity: 1
+
+  .page-nonactive
+    opacity: 0
+
+
+// [TODO] EEEWWWWWWWWW
+#pro1
+  background-color: #1C1C1C
+  .top
+    color: #1C1C1C !important
+
+#pro2
+  background-color: #f1d937
+  *
+    color: #555555 !important
+  .underline
+    background-color: #555 !important
+  .top
+    color: #f1d937 !important
+    background: #555 !important
+  .front
+    box-shadow: inset 0 0 0 2px #555 !important
