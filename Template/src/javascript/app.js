@@ -9,7 +9,6 @@ var ApplicationRouter = require('./ApplicationRouter');
 // Application Logic
 
 function igniteProjectClicks(pProject){
-  console.log(pProject);
   pProject.onclick = function(){
     document.location.hash = $(this).attr('data-hash');
   };

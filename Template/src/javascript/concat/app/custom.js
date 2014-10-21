@@ -33,10 +33,6 @@
 
     };
 
-        //Go to Projects Button
-        //document.querySelector('#gotoPro').onclick = function(){
-        //    $('#projects-wrapper').ScrollTo();
-        //};
     }
 
 

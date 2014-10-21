@@ -1,9 +1,14 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700)
 
 $lato: 'Lato', sans-serif
+$bold: 700
+$regular: 400
 
 body
   +font-smoothing // <- _mixins.scss
   // +translateZ(0) // <- Compass. commented out because z-index wont work
-  color: #555
+
+  // Hack to align different sizes of fonts together
   font-family: $lato
+  *::first-letter
+    margin-left: -0.06em
