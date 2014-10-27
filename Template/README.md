@@ -79,5 +79,13 @@ This will run the `default` gulp task defined in `gulp/tasks/default.js`, which 
 - `browserSync` has `build` as a task dependecy, so that all your assets will be processed before browserSync tries to serve them to you in the browser.
 - `build` includes the following tasks: `['scripts', 'browserify', 'sass', 'images', 'markup']`
 
+### In Case It Breaks
+
+Issues we ran in when working the flow on other machines, especially IGM lab machines:
+- xcode CLI tools neeeds to be installed on mac
+- image minify module breaks
+- sass 3.4.6 breaks. revert to 3.4.5 fixes it
+ (╯°□°）╯︵ ┻━┻) 
+
 ### Configuration
 All paths and plugin settings have been abstracted into a centralized config object in `gulp/config.js`. Adapt the paths and settings to the structure and needs of your project.
