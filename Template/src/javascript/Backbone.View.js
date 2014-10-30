@@ -1,4 +1,4 @@
-//  FUUUUUUCK HOW THE FUCK DOES MODULE WORK THIS IS ALL NEW STYUFF FOR ME
+// project detail views. Has Transitions
 var Backbone, _;
 
 _ = require('underscore');
@@ -18,8 +18,8 @@ module.exports = Backbone.View.extend({
     console.log("[VIEW] transitionIn");
     var view = this;
     var animateIn = function () {
-      view.$el.find('.content').removeClass('page-nonactive');
-      view.$el.find('.content').addClass('page-active');
+      view.$el.find('.content').removeClass('page-nonvisible');
+      view.$el.find('.content').addClass('page-visible');
       view.$el.one('transitionend', function () {
         if (_.isFunction(callback)) {
           callback();
@@ -31,8 +31,8 @@ module.exports = Backbone.View.extend({
   transitionOut: function (callback) {
     console.log("[VIEW] transitionOut");
     var view = this;
-    view.$el.find('.content').removeClass('page-active');
-    view.$el.find('.content').addClass('page-nonactive');
+    view.$el.find('.content').removeClass('page-visible');
+    view.$el.find('.content').addClass('page-nonvisible');
     view.$el.one('transitionend', function () {
       if (_.isFunction(callback)) {
         callback();
