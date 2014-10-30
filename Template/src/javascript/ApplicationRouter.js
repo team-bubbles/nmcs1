@@ -1,4 +1,5 @@
 var Backbone = require('backbone');
+var _ = require('underscore');
 var OnPageView = require('./OnPageView');
 var TemplatedView = require('./TemplatedView');
 
@@ -60,7 +61,7 @@ module.exports = Backbone.Router.extend({
     // Fuck this. no like seriously, fuck this
     var router = this;
 
-		document.getElementById("loader-wrapper").className = "active";
+		this.showLoader();
 
     $.ajax({
       url: pUrl,
@@ -69,12 +70,12 @@ module.exports = Backbone.Router.extend({
       success: function(data){
         router.addedView = new TemplatedView({template:data, data:{}, routeId:type +"/"+ id});
         router.switchView(router.addedView);
-				document.getElementById("loader-wrapper").className = "inactive";
+				_.delay(router.hideLoader, 500);
       },
       error: function(){ // [TODO] eeewwww this code is not DRY
         router.addedView = new OnPageView({template:"#404"});
         router.switchView(router.addedView);
-				document.getElementById("loader-wrapper").className = "inactive";
+				_.delay(router.hideLoader, 500);
       },
       progress: function(){
 
@@ -92,9 +93,17 @@ module.exports = Backbone.Router.extend({
   },
 
 	notFound: function() {
-		document.getElementById("loader-wrapper").className = "inactive";
+		_.delay(this.hideLoader, 500);
 		this.addedView = new OnPageView({template:"#404"});
 		this.switchView(this.addedView);
+	},
+
+	showLoader: function() {
+		document.getElementById("loader-wrapper").className = "active";
+	},
+	hideLoader: function() {
+		movetoEl('#content-wrapper');
+		document.getElementById("loader-wrapper").className = "inactive";
 	}
 
 });
