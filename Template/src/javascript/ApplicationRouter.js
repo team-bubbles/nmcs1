@@ -1,7 +1,6 @@
 var Backbone = require('backbone');
 var OnPageView = require('./OnPageView');
 var TemplatedView = require('./TemplatedView');
-var NProgress = require('nprogress');
 
 module.exports = Backbone.Router.extend({
 
@@ -61,7 +60,8 @@ module.exports = Backbone.Router.extend({
     // Fuck this. no like seriously, fuck this
     var router = this;
 
-		NProgress.start();
+		document.getElementById("loader-wrapper").className = "active";
+
     $.ajax({
       url: pUrl,
       dataType: 'text',
@@ -69,17 +69,15 @@ module.exports = Backbone.Router.extend({
       success: function(data){
         router.addedView = new TemplatedView({template:data, data:{}, routeId:type +"/"+ id});
         router.switchView(router.addedView);
-        //$('.loading-screen').fadeOut(400); // Danny's stuff
-        NProgress.done();
+				document.getElementById("loader-wrapper").className = "inactive";
       },
       error: function(){ // [TODO] eeewwww this code is not DRY
         router.addedView = new OnPageView({template:"#404"});
         router.switchView(router.addedView);
-        //$('.loading-screen').fadeOut(400); // Danny's stuff
-        NProgress.done();
+				document.getElementById("loader-wrapper").className = "inactive";
       },
       progress: function(){
-        NProgress.inc();
+
       },
     });
 
@@ -94,7 +92,7 @@ module.exports = Backbone.Router.extend({
   },
 
 	notFound: function() {
-    NProgress.done();
+		document.getElementById("loader-wrapper").className = "inactive";
 		this.addedView = new OnPageView({template:"#404"});
 		this.switchView(this.addedView);
 	}

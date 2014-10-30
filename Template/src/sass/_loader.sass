@@ -1,4 +1,4 @@
-$animation-duration: 5.4s
+$animation-duration: 4.5s
 
 $block-size: 15px
 $block-margin: 5px
@@ -90,7 +90,7 @@ $loader-size: $block-size * 3 + $block-margin * 2
 
 
 // Positioning
-.loader-wrapper
+#loader-wrapper
   position: fixed
   width: 100vw
   height: 100vh
@@ -102,3 +102,8 @@ $loader-size: $block-size * 3 + $block-margin * 2
   transition: all 0.45s ease
   // Click-through
   pointer-events: none
+
+  &.active
+    opacity: 1
+  &.inactive
+    opacity: 0
