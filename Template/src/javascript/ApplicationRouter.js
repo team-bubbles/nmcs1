@@ -48,44 +48,40 @@ module.exports = Backbone.Router.extend({
 	 */
 	changeView: function(type, id){
     // Check for empty case
-    var path;
+    var pUrl;
     if (!type && !id)
     {
-      path = '';
+      pUrl = 'header.html';
     } else {
-      path = type +"/"+ id
+      pUrl = type +"/"+ id + '.html';
     }
-    console.log("Path: " + path);
+    console.log("Path: " + pUrl);
     //$('.loading-screen').fadeIn(400);
-    NProgress.start();
     // Make a reference to router itself
     // Fuck this. no like seriously, fuck this
     var router = this;
-    if (path)
-    {
-      $.ajax({
-        url: path + '.html',
-        dataType: 'text',
-        cache: true,
-        success: function(data){
-          router.addedView = new TemplatedView({template:data, data:{}, routeId:type +"/"+ id});
-          router.switchView(router.addedView);
-          //$('.loading-screen').fadeOut(400); // Danny's stuff
-          NProgress.done();
-        },
-        error: function(){ // [TODO] eeewwww this code is not DRY
-          router.addedView = new OnPageView({template:"#404"});
-          router.switchView(router.addedView);
-          //$('.loading-screen').fadeOut(400); // Danny's stuff
-          NProgress.done();
-        },
-        progress: function(){
-          NProgress.inc();
-        },
-      });
-    } else {
-      router.clear();
-    }
+
+		NProgress.start();
+    $.ajax({
+      url: pUrl,
+      dataType: 'text',
+      cache: true,
+      success: function(data){
+        router.addedView = new TemplatedView({template:data, data:{}, routeId:type +"/"+ id});
+        router.switchView(router.addedView);
+        //$('.loading-screen').fadeOut(400); // Danny's stuff
+        NProgress.done();
+      },
+      error: function(){ // [TODO] eeewwww this code is not DRY
+        router.addedView = new OnPageView({template:"#404"});
+        router.switchView(router.addedView);
+        //$('.loading-screen').fadeOut(400); // Danny's stuff
+        NProgress.done();
+      },
+      progress: function(){
+        NProgress.inc();
+      },
+    });
 
 		// [TODO] [REFACTOR] quick code to hide the menu whenever switching view
 		document.getElementById("prBox").className = "overlayMenu";

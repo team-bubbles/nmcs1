@@ -1,6 +1,14 @@
 #header
   height: 100vh
   background-color: $bg-color
+  opacity: 0
+  transition: all 0.45s ease
+
+  &.page-visible
+    opacity: 1
+
+  &.page-nonvisible
+    opacity: 0
 
   #header-content
     position: absolute
@@ -62,7 +70,7 @@
 
 
 
-#projects-wrapper
+#blocks-wrapper
   overflow: hidden
   margin: 0 0 0 0 !important
 
@@ -140,5 +148,3 @@
     p
       opacity: 1
       transform: translate3d(0,0,0)
-
-  
