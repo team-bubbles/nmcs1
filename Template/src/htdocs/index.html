@@ -12,7 +12,7 @@
   <body>
 
     <div id="LAYER_ALL">
-      <div id="LAYER_MID">
+      <div id="LAYER_BOT">
         <div id="content-wrapper">
           <!-- Populated with template -->
           <div class="content">
@@ -101,16 +101,15 @@
             <p class="aboutMe-title">Stuff About Me</p>
             <p class="aboutMe-details">Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one  of the ones that became nothing.</p>
           </div>
-          
+
         </div>
 
         <div id="footer">
           <h4>2014 &copy; Captain Herp Derp</h4>
         </div>
-      </div><!-- Layer Mid End -->
+      </div>
 
-
-      <div id="LAYER_TOP">
+      <div id="LAYER_MID">
       <!-- Buttons -->
         <div id="BTNControl">
             <button type="button" id="leftArrow"><</button>
@@ -137,7 +136,14 @@
             </nav>
           </div> <!-- End ProperBox Div -->
         </div> <!-- End Overlay Menu -->
-      </div>  <!-- Layer Top End -->
+      </div>
+
+      <div id="LAYER_TOP">
+        <div class="loader-wrapper">
+          <div aria-busy="true" aria-label="Loading" role="progressbar"></div>
+        </div>
+      </div>
+
     </div> <!-- Layer All End -->
     <!-- Preload 404 message -->
     <script id="404" type="text/html">
