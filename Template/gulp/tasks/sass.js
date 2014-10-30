@@ -16,7 +16,7 @@ gulp.task('sass', ['images'], function () {
     }))
     .on('error', handleErrors)
     .pipe(sourcemaps.init())
-    .pipe(postcss([ autoprefixer({ browsers: ['last 2 version'] }) ]))
+    .pipe(postcss([ autoprefixer({ browsers: ['last 2 version'] }) ])) // Do other postcss tasks here inside postcss
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(config.dest));
 });

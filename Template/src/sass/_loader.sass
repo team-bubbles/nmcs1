@@ -1,9 +1,10 @@
-// Some vars
 $animation-duration: 5.4s
 
 $block-size: 15px
 $block-margin: 5px
-$color: white
+$block-spec-color: darken(rgba($bg-color, 1), 20%)
+$block-spec-trans-color: darken(rgba($bg-color, 0), 20%)
+
 $next: $block-size + $block-margin
 
 $loader-size: $block-size * 3 + $block-margin * 2
@@ -22,7 +23,7 @@ $loader-size: $block-size * 3 + $block-margin * 2
     width: $block-size
     height: $block-size
     content: ''
-    box-shadow: $next 0 0 rgba(255, 255, 255, 0), $next * 2 0 0 rgba(255, 255, 255, 0), 0 0 - $next 0 rgba(255, 255, 255, 0), $next 0 - $next 0 rgba(255, 255, 255, 0), $next * 2 0 - $next 0 rgba(255, 255, 255, 0), 0 0 - $next * 2 rgba(255, 255, 255, 0), $next 0 - $next * 2 rgba(255, 255, 255, 0), $next * 2 0 - $next * 2 rgba(242, 205, 123, 0)
+    box-shadow: $next 0 0 rgba($bg-color, 0), $next * 2 0 0 rgba($bg-color, 0), 0 0 - $next 0 rgba($bg-color, 0), $next 0 - $next 0 rgba($bg-color, 0), $next * 2 0 - $next 0 rgba($bg-color, 0), 0 0 - $next * 2 rgba($bg-color, 0), $next 0 - $next * 2 rgba($bg-color, 0), $next * 2 0 - $next * 2 $block-spec-trans-color
     animation: loader $animation-duration linear forwards infinite
   &::after
     position: absolute
@@ -31,7 +32,7 @@ $loader-size: $block-size * 3 + $block-margin * 2
     display: block
     width: $block-size
     height: $block-size
-    background-color: $color
+    background-color: rgba($bg-color, 1)
     opacity: 0
     content: ''
     animation: base $animation-duration linear forwards infinite
@@ -51,38 +52,53 @@ $loader-size: $block-size * 3 + $block-margin * 2
 
 @keyframes loader
   0%
-    box-shadow: $next -10px rgba(255, 255, 255, 0), $next * 2 0 rgba(255, 255, 255, 0), 0 0 - $next rgba(255, 255, 255, 0), $next 0 - $next rgba(255, 255, 255, 0), $next * 2 0 - $next rgba(255, 255, 255, 0), 0 0 - $next * 2 rgba(255, 255, 255, 0), $next 0 - $next * 2 rgba(255, 255, 255, 0), $next * 2 0 - $next * 2 rgba(242, 205, 123, 0)
+    box-shadow: $next -10px rgba($bg-color, 0), $next * 2 0 rgba($bg-color, 0), 0 0 - $next rgba($bg-color, 0), $next 0 - $next rgba($bg-color, 0), $next * 2 0 - $next rgba($bg-color, 0), 0 0 - $next * 2 rgba($bg-color, 0), $next 0 - $next * 2 rgba($bg-color, 0), $next * 2 0 - $next * 2 $block-spec-trans-color
   5%
-    box-shadow: $next -10px rgba(255, 255, 255, 0), $next * 2 0 rgba(255, 255, 255, 0), 0 0 - $next rgba(255, 255, 255, 0), $next 0 - $next rgba(255, 255, 255, 0), $next * 2 0 - $next rgba(255, 255, 255, 0), 0 0 - $next * 2 rgba(255, 255, 255, 0), $next 0 - $next * 2 rgba(255, 255, 255, 0), $next * 2 0 - $next * 2 rgba(242, 205, 123, 0)
+    box-shadow: $next -10px rgba($bg-color, 0), $next * 2 0 rgba($bg-color, 0), 0 0 - $next rgba($bg-color, 0), $next 0 - $next rgba($bg-color, 0), $next * 2 0 - $next rgba($bg-color, 0), 0 0 - $next * 2 rgba($bg-color, 0), $next 0 - $next * 2 rgba($bg-color, 0), $next * 2 0 - $next * 2 $block-spec-trans-color
   10%
-    box-shadow: $next 0 rgba(255, 255, 255, 1), $next * 2 -10px rgba(255, 255, 255, 0), 0 0 - $next rgba(255, 255, 255, 0), $next 0 - $next rgba(255, 255, 255, 0), $next * 2 0 - $next rgba(255, 255, 255, 0), 0 0 - $next * 2 rgba(255, 255, 255, 0), $next 0 - $next * 2 rgba(255, 255, 255, 0), $next * 2 0 - $next * 2 rgba(242, 205, 123, 0)
+    box-shadow: $next 0 rgba($bg-color, 1), $next * 2 -10px rgba($bg-color, 0), 0 0 - $next rgba($bg-color, 0), $next 0 - $next rgba($bg-color, 0), $next * 2 0 - $next rgba($bg-color, 0), 0 0 - $next * 2 rgba($bg-color, 0), $next 0 - $next * 2 rgba($bg-color, 0), $next * 2 0 - $next * 2 $block-spec-trans-color
   15%
-    box-shadow: $next 0 rgba(255, 255, 255, 1), $next * 2 0 rgba(255, 255, 255, 1), 0 0 - $next - 10px rgba(255, 255, 255, 0), $next 0 - $next rgba(255, 255, 255, 0), $next * 2 0 - $next rgba(255, 255, 255, 0), 0 0 - $next * 2 rgba(255, 255, 255, 0), $next 0 - $next * 2 rgba(255, 255, 255, 0), $next * 2 0 - $next * 2 rgba(242, 205, 123, 0)
+    box-shadow: $next 0 rgba($bg-color, 1), $next * 2 0 rgba($bg-color, 1), 0 0 - $next - 10px rgba($bg-color, 0), $next 0 - $next rgba($bg-color, 0), $next * 2 0 - $next rgba($bg-color, 0), 0 0 - $next * 2 rgba($bg-color, 0), $next 0 - $next * 2 rgba($bg-color, 0), $next * 2 0 - $next * 2 $block-spec-trans-color
   20%
-    box-shadow: $next 0 rgba(255, 255, 255, 1), $next * 2 0 rgba(255, 255, 255, 1), 0 0 - $next rgba(255, 255, 255, 1), $next 0 - $next - 10px rgba(255, 255, 255, 0), $next * 2 0 - $next rgba(255, 255, 255, 0), 0 0 - $next * 2 rgba(255, 255, 255, 0), $next 0 - $next * 2 rgba(255, 255, 255, 0), $next * 2 0 - $next * 2 rgba(242, 205, 123, 0)
+    box-shadow: $next 0 rgba($bg-color, 1), $next * 2 0 rgba($bg-color, 1), 0 0 - $next rgba($bg-color, 1), $next 0 - $next - 10px rgba($bg-color, 0), $next * 2 0 - $next rgba($bg-color, 0), 0 0 - $next * 2 rgba($bg-color, 0), $next 0 - $next * 2 rgba($bg-color, 0), $next * 2 0 - $next * 2 $block-spec-trans-color
   25%
-    box-shadow: $next 0 rgba(255, 255, 255, 1), $next * 2 0 rgba(255, 255, 255, 1), 0 0 - $next rgba(255, 255, 255, 1), $next 0 - $next rgba(255, 255, 255, 1), $next * 2 0 - $next - 10px rgba(255, 255, 255, 0), 0 0 - $next * 2 rgba(255, 255, 255, 0), $next 0 - $next * 2 rgba(255, 255, 255, 0), $next * 2 0 - $next * 2 rgba(242, 205, 123, 0)
+    box-shadow: $next 0 rgba($bg-color, 1), $next * 2 0 rgba($bg-color, 1), 0 0 - $next rgba($bg-color, 1), $next 0 - $next rgba($bg-color, 1), $next * 2 0 - $next - 10px rgba($bg-color, 0), 0 0 - $next * 2 rgba($bg-color, 0), $next 0 - $next * 2 rgba($bg-color, 0), $next * 2 0 - $next * 2 $block-spec-trans-color
   30%
-    box-shadow: $next 0 rgba(255, 255, 255, 1), $next * 2 0 rgba(255, 255, 255, 1), 0 0 - $next rgba(255, 255, 255, 1), $next 0 - $next rgba(255, 255, 255, 1), $next * 2 0 - $next rgba(255, 255, 255, 1), 0 0 - $next * 2 - 10px rgba(255, 255, 255, 0), $next 0 - $next * 2 rgba(255, 255, 255, 0), $next * 2 0 - $next * 2 rgba(242, 205, 123, 0)
+    box-shadow: $next 0 rgba($bg-color, 1), $next * 2 0 rgba($bg-color, 1), 0 0 - $next rgba($bg-color, 1), $next 0 - $next rgba($bg-color, 1), $next * 2 0 - $next rgba($bg-color, 1), 0 0 - $next * 2 - 10px rgba($bg-color, 0), $next 0 - $next * 2 rgba($bg-color, 0), $next * 2 0 - $next * 2 $block-spec-trans-color
   35%
-    box-shadow: $next 0 rgba(255, 255, 255, 1), $next * 2 0 rgba(255, 255, 255, 1), 0 0 - $next rgba(255, 255, 255, 1), $next 0 - $next rgba(255, 255, 255, 1), $next * 2 0 - $next rgba(255, 255, 255, 1), 0 0 - $next * 2 rgba(255, 255, 255, 1), $next 0 - $next * 2 - 10px rgba(255, 255, 255, 0), $next * 2 0 - $next * 2 rgba(242, 205, 123, 0)
+    box-shadow: $next 0 rgba($bg-color, 1), $next * 2 0 rgba($bg-color, 1), 0 0 - $next rgba($bg-color, 1), $next 0 - $next rgba($bg-color, 1), $next * 2 0 - $next rgba($bg-color, 1), 0 0 - $next * 2 rgba($bg-color, 1), $next 0 - $next * 2 - 10px rgba($bg-color, 0), $next * 2 0 - $next * 2 $block-spec-trans-color
   40%
-    box-shadow: $next 0 rgba(255, 255, 255, 1), $next * 2 0 rgba(255, 255, 255, 1), 0 0 - $next rgba(255, 255, 255, 1), $next 0 - $next rgba(255, 255, 255, 1), $next * 2 0 - $next rgba(255, 255, 255, 1), 0 0 - $next * 2 rgba(255, 255, 255, 1), $next 0 - $next * 2 rgba(255, 255, 255, 1), $next * 2 0 - $next * 2 - 10px rgba(242, 205, 123, 0)
+    box-shadow: $next 0 rgba($bg-color, 1), $next * 2 0 rgba($bg-color, 1), 0 0 - $next rgba($bg-color, 1), $next 0 - $next rgba($bg-color, 1), $next * 2 0 - $next rgba($bg-color, 1), 0 0 - $next * 2 rgba($bg-color, 1), $next 0 - $next * 2 rgba($bg-color, 1), $next * 2 0 - $next * 2 - 10px $block-spec-trans-color
   45%, 55%
-    box-shadow: $next 0 rgba(255, 255, 255, 1), $next * 2 0 rgba(255, 255, 255, 1), 0 0 - $next rgba(255, 255, 255, 1), $next 0 - $next rgba(255, 255, 255, 1), $next * 2 0 - $next rgba(255, 255, 255, 1), 0 0 - $next * 2 rgba(255, 255, 255, 1), $next 0 - $next * 2 rgba(255, 255, 255, 1), $next * 2 0 - $next * 2 rgba(242, 205, 123, 1)
+    box-shadow: $next 0 rgba($bg-color, 1), $next * 2 0 rgba($bg-color, 1), 0 0 - $next rgba($bg-color, 1), $next 0 - $next rgba($bg-color, 1), $next * 2 0 - $next rgba($bg-color, 1), 0 0 - $next * 2 rgba($bg-color, 1), $next 0 - $next * 2 rgba($bg-color, 1), $next * 2 0 - $next * 2 $block-spec-color
   60%
-    box-shadow: $next 10px rgba(255, 255, 255, 0), $next * 2 0 rgba(255, 255, 255, 1), 0 0 - $next rgba(255, 255, 255, 1), $next 0 - $next rgba(255, 255, 255, 1), $next * 2 0 - $next rgba(255, 255, 255, 1), 0 0 - $next * 2 rgba(255, 255, 255, 1), $next 0 - $next * 2 rgba(255, 255, 255, 1), $next * 2 0 - $next * 2 rgba(242, 205, 123, 1)
+    box-shadow: $next 10px rgba($bg-color, 0), $next * 2 0 rgba($bg-color, 1), 0 0 - $next rgba($bg-color, 1), $next 0 - $next rgba($bg-color, 1), $next * 2 0 - $next rgba($bg-color, 1), 0 0 - $next * 2 rgba($bg-color, 1), $next 0 - $next * 2 rgba($bg-color, 1), $next * 2 0 - $next * 2 $block-spec-color
   65%
-    box-shadow: $next 10px rgba(255, 255, 255, 0), $next * 2 10px rgba(255, 255, 255, 0), 0 0 - $next rgba(255, 255, 255, 1), $next 0 - $next rgba(255, 255, 255, 1), $next * 2 0 - $next rgba(255, 255, 255, 1), 0 0 - $next * 2 rgba(255, 255, 255, 1), $next 0 - $next * 2 rgba(255, 255, 255, 1), $next * 2 0 - $next * 2 rgba(242, 205, 123, 1)
+    box-shadow: $next 10px rgba($bg-color, 0), $next * 2 10px rgba($bg-color, 0), 0 0 - $next rgba($bg-color, 1), $next 0 - $next rgba($bg-color, 1), $next * 2 0 - $next rgba($bg-color, 1), 0 0 - $next * 2 rgba($bg-color, 1), $next 0 - $next * 2 rgba($bg-color, 1), $next * 2 0 - $next * 2 $block-spec-color
   70%
-    box-shadow: $next 10px rgba(255, 255, 255, 0), $next * 2 10px rgba(255, 255, 255, 0), 0 0 - $next + 10px rgba(255, 255, 255, 0), $next 0 - $next rgba(255, 255, 255, 1), $next * 2 0 - $next rgba(255, 255, 255, 1), 0 0 - $next * 2 rgba(255, 255, 255, 1), $next 0 - $next * 2 rgba(255, 255, 255, 1), $next * 2 0 - $next * 2 rgba(242, 205, 123, 1)
+    box-shadow: $next 10px rgba($bg-color, 0), $next * 2 10px rgba($bg-color, 0), 0 0 - $next + 10px rgba($bg-color, 0), $next 0 - $next rgba($bg-color, 1), $next * 2 0 - $next rgba($bg-color, 1), 0 0 - $next * 2 rgba($bg-color, 1), $next 0 - $next * 2 rgba($bg-color, 1), $next * 2 0 - $next * 2 $block-spec-color
   75%
-    box-shadow: $next 10px rgba(255, 255, 255, 0), $next * 2 10px rgba(255, 255, 255, 0), 0 0 - $next + 10px rgba(255, 255, 255, 0), $next 0 - $next + 10px rgba(255, 255, 255, 0), $next * 2 0 - $next rgba(255, 255, 255, 1), 0 0 - $next * 2 rgba(255, 255, 255, 1), $next 0 - $next * 2 rgba(255, 255, 255, 1), $next * 2 0 - $next * 2 rgba(242, 205, 123, 1)
+    box-shadow: $next 10px rgba($bg-color, 0), $next * 2 10px rgba($bg-color, 0), 0 0 - $next + 10px rgba($bg-color, 0), $next 0 - $next + 10px rgba($bg-color, 0), $next * 2 0 - $next rgba($bg-color, 1), 0 0 - $next * 2 rgba($bg-color, 1), $next 0 - $next * 2 rgba($bg-color, 1), $next * 2 0 - $next * 2 $block-spec-color
   80%
-    box-shadow: $next 10px rgba(255, 255, 255, 0), $next * 2 10px rgba(255, 255, 255, 0), 0 0 - $next + 10px rgba(255, 255, 255, 0), $next 0 - $next + 10px rgba(255, 255, 255, 0), $next * 2 0 - $next + 10px rgba(255, 255, 255, 0), 0 0 - $next * 2 rgba(255, 255, 255, 1), $next 0 - $next * 2 rgba(255, 255, 255, 1), $next * 2 0 - $next * 2 rgba(242, 205, 123, 1)
+    box-shadow: $next 10px rgba($bg-color, 0), $next * 2 10px rgba($bg-color, 0), 0 0 - $next + 10px rgba($bg-color, 0), $next 0 - $next + 10px rgba($bg-color, 0), $next * 2 0 - $next + 10px rgba($bg-color, 0), 0 0 - $next * 2 rgba($bg-color, 1), $next 0 - $next * 2 rgba($bg-color, 1), $next * 2 0 - $next * 2 $block-spec-color
   85%
-    box-shadow: $next 10px rgba(255, 255, 255, 0), $next * 2 10px rgba(255, 255, 255, 0), 0 0 - $next + 10px rgba(255, 255, 255, 0), $next 0 - $next + 10px rgba(255, 255, 255, 0), $next * 2 0 - $next + 10px rgba(255, 255, 255, 0), 0 0 - $next * 2 + 10px rgba(255, 255, 255, 0), $next 0 - $next * 2 rgba(255, 255, 255, 1), $next * 2 0 - $next * 2 rgba(242, 205, 123, 1)
+    box-shadow: $next 10px rgba($bg-color, 0), $next * 2 10px rgba($bg-color, 0), 0 0 - $next + 10px rgba($bg-color, 0), $next 0 - $next + 10px rgba($bg-color, 0), $next * 2 0 - $next + 10px rgba($bg-color, 0), 0 0 - $next * 2 + 10px rgba($bg-color, 0), $next 0 - $next * 2 rgba($bg-color, 1), $next * 2 0 - $next * 2 $block-spec-color
   90%
-    box-shadow: $next 10px rgba(255, 255, 255, 0), $next * 2 10px rgba(255, 255, 255, 0), 0 0 - $next + 10px rgba(255, 255, 255, 0), $next 0 - $next + 10px rgba(255, 255, 255, 0), $next * 2 0 - $next + 10px rgba(255, 255, 255, 0), 0 0 - $next * 2 + 10px rgba(255, 255, 255, 0), $next 0 - $next * 2 + 10px rgba(255, 255, 255, 0), $next * 2 0 - $next * 2 rgba(242, 205, 123, 1)
+    box-shadow: $next 10px rgba($bg-color, 0), $next * 2 10px rgba($bg-color, 0), 0 0 - $next + 10px rgba($bg-color, 0), $next 0 - $next + 10px rgba($bg-color, 0), $next * 2 0 - $next + 10px rgba($bg-color, 0), 0 0 - $next * 2 + 10px rgba($bg-color, 0), $next 0 - $next * 2 + 10px rgba($bg-color, 0), $next * 2 0 - $next * 2 $block-spec-color
   95%, 100%
-    box-shadow: $next 10px rgba(255, 255, 255, 0), $next * 2 10px rgba(255, 255, 255, 0), 0 0 - $next + 10px rgba(255, 255, 255, 0), $next 0 - $next + 10px rgba(255, 255, 255, 0), $next * 2 0 - $next + 10px rgba(255, 255, 255, 0), 0 0 - $next * 2 + 10px rgba(255, 255, 255, 0), $next 0 - $next * 2 + 10px rgba(255, 255, 255, 0), $next * 2 0 - $next * 2 + 10px rgba(242, 205, 123, 0)
+    box-shadow: $next 10px rgba($bg-color, 0), $next * 2 10px rgba($bg-color, 0), 0 0 - $next + 10px rgba($bg-color, 0), $next 0 - $next + 10px rgba($bg-color, 0), $next * 2 0 - $next + 10px rgba($bg-color, 0), 0 0 - $next * 2 + 10px rgba($bg-color, 0), $next 0 - $next * 2 + 10px rgba($bg-color, 0), $next * 2 0 - $next * 2 + 10px $block-spec-trans-color
+
+
+// Positioning
+.loader-wrapper
+  position: fixed
+  width: 100vw
+  height: 100vh
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: white
+  opacity: 1
+  transition: all 0.45s ease
+  // Click-through
+  pointer-events: none
