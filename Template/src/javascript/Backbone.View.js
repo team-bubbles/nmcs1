@@ -1,11 +1,10 @@
 // project detail views. Has Transitions
-var Backbone, _;
+var Backbone, _, Prefixer;
 
 _ = require('underscore');
-
 Backbone = require('backbone');
-
 Backbone.$ = require('jquery');
+Prefixer = require('./Prefixer');
 
 module.exports = Backbone.View.extend({
   remove: function() {
@@ -16,21 +15,21 @@ module.exports = Backbone.View.extend({
   transitionIn: function (callback) {
     var view = this;
     var animateIn = function () {
-      view.$el.find('.content').removeClass('page-nonvisible');
-      view.$el.find('.content').addClass('page-visible');
-      view.$el.one('transitionend', function () {
+      view.$el.find('.content').removeClass('page-out');
+      view.$el.find('.content').addClass('page-in');
+      view.$el.one( Prefixer.getTransitionend() + ' ' + Prefixer.getAnimationend(), function () {
         if (_.isFunction(callback)) {
           callback();
         }
       });
     };
-    _.delay(animateIn, 20);
+    _.delay(animateIn, 20); // browser bug hot fix
   },
   transitionOut: function (callback) {
     var view = this;
-    view.$el.find('.content').removeClass('page-visible');
-    view.$el.find('.content').addClass('page-nonvisible');
-    view.$el.one('transitionend', function () {
+    view.$el.find('.content').removeClass('page-in');
+    view.$el.find('.content').addClass('page-out');
+    view.$el.one( Prefixer.getTransitionend() + ' ' + Prefixer.getAnimationend(), function () {
       if (_.isFunction(callback)) {
         callback();
       }

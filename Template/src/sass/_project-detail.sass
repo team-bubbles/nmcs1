@@ -5,13 +5,16 @@
 .project-detail
   $btnW: 14em
   $btnH: 3em
-  opacity: 0
+  position: absolute
+  width: 100%
+  z-index: 1
   transition: all 0.45s ease
-  &.page-visible
-    opacity: 1
 
-  &.page-nonvisible
-    opacity: 0
+  &.page-in
+    z-index: 1
+
+  &.page-out
+    z-index: 0
 
   .fullscreen-box
     height: 100vh
