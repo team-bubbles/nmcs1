@@ -45,15 +45,11 @@ module.exports = Backbone.Router.extend({
 		pView.render();
 		router.currentView = pView;
 		// Make-disappear loader animation
-		console.log("[router]hideLoader: STARTS HIDING");
 		router.hideLoader(function(){
-			console.log("[router]hideLoader: IS HIDDEN");
 			if (router.pastView) router.pastView.transitionOut();
 	    router.currentView.transitionIn(function(){
-				console.log(router.currentView + " transitionIn finished");
 				if (router.pastView) {
 					// Detach the old view
-					console.log("Detach the old view: " + router.pastView);
 					router.pastView.remove();
 				}
 			});
@@ -72,7 +68,6 @@ module.exports = Backbone.Router.extend({
     } else {
       pUrl = type +"/"+ id + '.html';
     }
-    console.log("Path: " + pUrl);
     //$('.loading-screen').fadeIn(400);
     // Make a reference to router itself
     // Fuck this. no like seriously, fuck this
@@ -85,7 +80,6 @@ module.exports = Backbone.Router.extend({
       dataType: 'text',
       cache: true,
       success: function(data){
-				console.log("[Router]changeView: Success");
         router.addedView = new TemplatedView({template:data, data:{}, routeId:type +"/"+ id});
         router.switchView(router.addedView);
       },

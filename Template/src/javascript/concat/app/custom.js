@@ -12,7 +12,6 @@
     //Overlay Buttons
         document.querySelector("#menuBTN").onclick = function(){
 
-              console.log(this);
             if(this.className == ""){
                 document.getElementById("prBox").className = "overlayMenu open";
                 this.className = "active";
@@ -42,5 +41,4 @@
 function movetoEl(elID){
     var el = elID;
     $(el).ScrollTo();
-    console.log("Scroll to: "+el);
 }
