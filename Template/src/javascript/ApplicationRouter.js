@@ -5,6 +5,7 @@ var Backbone = require('backbone');
 var _ = require('underscore');
 var OnPageView = require('./OnPageView');
 var TemplatedView = require('./TemplatedView');
+var Prefixer = require('./Prefixer');
 
 module.exports = Backbone.Router.extend({
 
@@ -21,40 +22,42 @@ module.exports = Backbone.Router.extend({
 		"*else": "notFound",
 	},
 
-	// Adds new DOM, and animates transition
+	// Adds new DOM, and ANIMATES transition
 	switchView: function(pView) {
+		// !important
+		var router = this;
 		// Scroll to top
 		movetoEl('#content-wrapper');
-		// Make-disappear loader animation
-		_.delay(this.hideLoader, 500);
 
 		// if no previous view, just put it in already
-    var previous = this.currentView;
+		var previous = router.currentView;
 		if (!previous) {
 			//if no previous view existed, totally replace contents in dom
-			this.el.html(pView.el);
-    }
-    else{
+			router.el.html(pView.el);
+		}
+		else{
 			//add past view
-			this.pastView = previous;
+			router.pastView = previous;
 			// Move the view element into the DOM (replacing the old content)
-			this.el.prepend(pView.el);
-    }
-
+			router.el.prepend(pView.el);
+		}
 		// Render view after it is in the DOM (styles are applied)
 		pView.render();
-		this.currentView = pView;
-		var router = this;
-		if (this.pastView) this.pastView.transitionOut();
-    this.currentView.transitionIn(function(){
-			console.log(router.currentView + " transitionIn finished");
-			if (router.pastView) {
-				// Detach the old view
-				console.log("Detach the old view: " + router.pastView);
-				router.pastView.remove();
-			}
+		router.currentView = pView;
+		// Make-disappear loader animation
+		console.log("[router]hideLoader: STARTS HIDING");
+		router.hideLoader(function(){
+			console.log("[router]hideLoader: IS HIDDEN");
+			if (router.pastView) router.pastView.transitionOut();
+	    router.currentView.transitionIn(function(){
+				console.log(router.currentView + " transitionIn finished");
+				if (router.pastView) {
+					// Detach the old view
+					console.log("Detach the old view: " + router.pastView);
+					router.pastView.remove();
+				}
+			});
 		});
-
 	},
 
 	/*
@@ -82,6 +85,7 @@ module.exports = Backbone.Router.extend({
       dataType: 'text',
       cache: true,
       success: function(data){
+				console.log("[Router]changeView: Success");
         router.addedView = new TemplatedView({template:data, data:{}, routeId:type +"/"+ id});
         router.switchView(router.addedView);
       },
@@ -111,10 +115,19 @@ module.exports = Backbone.Router.extend({
 	},
 
 	showLoader: function() {
-		document.getElementById("loader-wrapper").className = "active";
+		$('#loader-wrapper').removeClass('inactive');
+		$('#loader-wrapper').addClass('active');
 	},
-	hideLoader: function() {
-		document.getElementById("loader-wrapper").className = "inactive";
+	hideLoader: function(callback) {
+		_.delay(function(){
+			$('#loader-wrapper').removeClass('active');
+			$('#loader-wrapper').addClass('inactive');
+			$('#loader-wrapper').one( Prefixer.getTransitionend() + ' ' + Prefixer.getAnimationend(), function () {
+				if (_.isFunction(callback)) {
+					callback();
+				}
+			});
+		}, 300);
 	}
 
 });

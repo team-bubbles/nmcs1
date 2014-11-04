@@ -1,0 +1,22 @@
+/* The ajax-loaded main content display area */
+#content-wrapper
+  // For working with absolute position of inner contents
+  position: relative
+  height: 100%
+
+.content
+  position: absolute
+  width: 100%
+  display: none
+  z-index: 1
+  animation-fill-mode: both
+  animation-duration: 0.7s
+
+  &.page-in
+    display: initial
+    z-index: 1
+    animation-name: bounceInRight
+
+  &.page-out
+    display: initial
+    z-index: 0
