@@ -17,6 +17,6 @@ function igniteProjectClicks(pProject){
 $(document).ready(function() {
   for (var i = 0; i < $(".project").length; i++) { igniteProjectClicks($(".project")[i]);}
   var EVI = new EventEmitter2();
-  new ApplicationRouter($('#content-wrapper'));
+  new ApplicationRouter($('#content-wrapper'), EVI);
   Backbone.history.start();
 });

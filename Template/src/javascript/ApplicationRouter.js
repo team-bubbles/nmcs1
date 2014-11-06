@@ -6,11 +6,13 @@ var _ = require('underscore');
 var OnPageView = require('./OnPageView');
 var TemplatedView = require('./TemplatedView');
 var Prefixer = require('./Prefixer');
+var EventEmitter2 = require('eventemitter2').EventEmitter2;
 
 module.exports = Backbone.Router.extend({
 
-	initialize: function(el) {
+	initialize: function(el, evi) {
 		this.el = el;
+		this.EVI = evi;
 	},
 
 	currentView: null,

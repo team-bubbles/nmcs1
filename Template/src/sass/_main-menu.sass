@@ -25,7 +25,7 @@ $menu-bg-color: #1A1A1A
   padding-top: 2em
   text-align: right
   overflow: hidden
-  display: none
+  //display: none
 
 #leftArrow
   background: #666
@@ -38,10 +38,16 @@ $menu-bg-color: #1A1A1A
 #menuBTN
   position: absolute
   top: 46px
-  left: 110%
   left: calc(100% + 60px)
   pointer-events: all
   cursor: pointer
+  transition: all 0.3s ease
+  .backdrop
+    opacity: 1
+    transition: all 0.3s ease
+  &:hover
+    .backdrop
+      opacity: 0
   .svg-menu-toggle
     fill: #fff
     .bar
@@ -55,17 +61,17 @@ $menu-bg-color: #1A1A1A
     .bar:nth-of-type(3)
       transform-origin: 20px 20px
 
-#menuBTN.active
-  left: 110%
-  .svg-menu-toggle
-    .bar:nth-of-type(1)
-      transform: rotate(-45deg) translateY(-10px) translateX(-8px)
+  &.active
+    left: 110%
+    .svg-menu-toggle
+      .bar:nth-of-type(1)
+        transform: rotate(-45deg) translateY(-10px) translateX(-8px)
 
-    .bar:nth-of-type(2)
-      opacity: 0
+      .bar:nth-of-type(2)
+        opacity: 0
 
-    .bar:nth-of-type(3)
-      transform: rotate(45deg) translateY(6px) translateX(0px)
+      .bar:nth-of-type(3)
+        transform: rotate(45deg) translateY(6px) translateX(0px)
 
 
 /*End BTN */
