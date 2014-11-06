@@ -4,6 +4,7 @@ var $ = require('jquery');
 // Handles arrow nav button and keyboard-controlled project switching
 module.exports = {
   init: function(evi) {
+    this.isLocked = false;
     this.EVI = evi;
     //Arrow Buttons ---- Hook up the slider code here
     var arrowNav = this;
@@ -30,6 +31,7 @@ module.exports = {
 
     this.EVI = evi;
     this.EVI.on('newContentIsIn', function(id){
+      arrowNav.isLocked = false;
       if (id) {
         $("#BTNControl").addClass('active');
       } else {
@@ -39,7 +41,11 @@ module.exports = {
   },
 
   navigate: function(direction) { // [TODO] USE ENUM YOU FUCKTARD
-    this.EVI.emit('requestContentChange', direction);
+    if (!this.isLocked)
+    {
+      this.EVI.emit('requestContentChange', direction);
+      this.isLocked = true;
+    }
   },
 
 };
