@@ -65,34 +65,153 @@
           transform: translate3d(0, 0, $btnH/2)
 
   .mission-goals
+    background-color: #f8f8f8
     text-align: center
     .mission
-      background-color: white
-      height: 40%
       h2
         padding-top: 5%
-        font-weight: $bold
+        font-weight: $regular
         font-style: italic
         font-size: 18px
         color: #252525
+        text-transform: uppercase
+        letter-spacing: 5px
       p
         font-weight: $light
         font-size: 30px
         color: #555
+        padding-left: 10%
+        padding-right: 10%
     .goals
-      background-color: #555
-      height: 60%
+      img
+        margin: auto
+        display: block
+      .goals-wrapper
+        display: flex
+        flex-direction: row
+        padding-left: 10%
+        padding-right: 10%
+        overflow: scroll
+        .goals-item
+          flex-grow: 1
+          margin: auto
+          width: 250px
+          padding: 15px
       h2
         padding-top: 5%
-        font-weight: $bold
+        font-weight: $regular
         font-style: italic
         font-size: 18px
-        color: white
+        color: #252525
+        text-transform: uppercase
+        letter-spacing: 5px
+      h3
+        text-transform: uppercase
+        font-weight: $bold
+        font-size: 14px
+        letter-spacing: 3px
+        margin-top: 40px
+        margin-bottom: 20px
+      p
+        font-weight: $regular
+        font-size: 14px
+        color: #555
 
+  .wireframes
+    background-color: #FFF
+    .imgwrapper
+      margin: auto
+      height: 400px
+      width: 80%
+      overflow: hidden
+      img
+        max-width: 100%
+    h2
+      padding-top: 5%
+      padding-bottom: 20px
+      font-weight: $regular
+      font-style: italic
+      font-size: 18px
+      color: #252525
+      text-transform: uppercase
+      letter-spacing: 5px
+      text-align: center
+    .wireframe-p
+      margin-top: 20px
+      display: flex
+      flex-direction: row
+      padding-left: 10%
+      padding-right: 10%
+      overflow: scroll
+      .wireframe-p-item
+        flex-grow: 1
+        margin: auto
+        width: 30%
+        padding: 15px
+    p
+      text-align: left
+      font-weight: $regular
+      font-size: 14px
+      color: #555
+
+  .moodboard
+    background-color: #363636
+    .imgwrapper
+      margin: auto
+      width: 80%
+      text-align: center
+      img
+        max-width: 80%
+    h2
+      padding-top: 5%
+      padding-bottom: 20px
+      font-weight: $regular
+      font-style: italic
+      font-size: 18px
+      color: #FFF
+      text-transform: uppercase
+      letter-spacing: 5px
+      text-align: center
+    p
+      text-align: left
+      font-weight: $regular
+      font-size: 14px
+      color: #555
+
+  .userjourney
+    text-align: center
+    background-color: #f8f8f8
+    .imgwrapper
+      margin: auto
+      width: 90%
+      img
+        max-width: 90%
+        max-height: 90%
+    h2
+      padding-top: 5%
+      padding-bottom: 20px
+      font-weight: $regular
+      font-style: italic
+      font-size: 18px
+      color: #252525
+      text-transform: uppercase
+      letter-spacing: 5px
+    p
+      font-weight: $regular
+      font-size: 14px
+      color: #555
+      padding-left: 10%
+      padding-right: 10%
+      margin-bottom: 50px
 
 // [TODO] EEEWWWWWWWWW
 #pro1
-  background-color: #1C1C1C
+  background-color: white
+  .project-header
+    background-image: url(../img/project1/bg.jpg)
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
   .top
     color: #1C1C1C !important
 
