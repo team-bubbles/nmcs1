@@ -1,20 +1,31 @@
 #aboutme
-	background-color: #555555
-	padding-top : 3em
-	padding-left : 3em
-	padding-right : 3em
-	padding-bottom : 3em
-	color : #ffffff
-	display : block
+    background-image: url(../img/profile.jpg)
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    color: #ffffff
+    display: block
+    height: 500px
 
-	.aboutMe-textControl
-		text-align : left
-		width : 60%
-		display : block
-		float : left
+    .aboutMeWrapper
+        background: $bg-color-rgba
+        padding-top: 3em
+        padding-left: 3em
+        padding-right: 3em
+        padding-bottom: 3em
+        height: 100%
+    
+    .aboutMe-textControl
+        text-align: center
+        width: 50%
+        margin: auto
+        display: block
 
-	.aboutMe-title
-		font-size : 21px
-
-	.aboutMe-details
-		font-size : 18px
+    .aboutMe-title
+        font-size: 2.5em
+        font-weight: $bold
+        text-transform: uppercase
+        letter-spacing: 5px
+        
+    .aboutMe-details
+        font-size: 1.2em
