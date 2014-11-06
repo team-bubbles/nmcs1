@@ -10,6 +10,10 @@
 
 (function ($) {
     $.fn.pagepiling = function (options) {
+
+      // [CUSTOM] hide below-pp when initialized
+      $('#below-pp').css('display', 'none');
+
         var container = $(this);
         var lastScrolledDestiny;
         var lastAnimation = 0;
@@ -270,6 +274,8 @@
                 }
 
                 v.animateSection = v.activeSection;
+
+
             }
 
             //scrolling up (moving section down to the viewport)
@@ -290,6 +296,8 @@
 
             var timeNow = new Date().getTime();
             lastAnimation = timeNow;
+
+
         }
 
         /**
@@ -332,6 +340,12 @@
         function afterSectionLoads(v){
             //callback (afterLoad) if the site is not just resizing and readjusting the slides
             $.isFunction(options.afterLoad) && options.afterLoad.call(this, v.anchorLink, (v.sectionIndex + 1));
+
+            // [CUSTOM] If this is the last section, turn display of contents below pp on
+            // if not, keep its display: none
+            if ( v.sectionIndex < $('.pp-section').length - 1 ) $('#below-pp').css('display', 'none');
+            else $('#below-pp').css('display', 'initial');
+            console.log("CHANGING SECTION");
         }
 
 
@@ -771,7 +785,7 @@
         * Creates a vertical navigation bar.
         */
         function addVerticalNavigation(){
-            $('body').append('<div id="pp-nav"><ul></ul></div>');
+            container.append('<div id="pp-nav"><ul></ul></div>');
             var nav = $('#pp-nav');
 
             nav.css('color', options.navigation.textColor);
