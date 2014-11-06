@@ -11,8 +11,8 @@
 (function ($) {
     $.fn.pagepiling = function (options) {
 
-      // [CUSTOM] hide below-pp when initialized
-      $('#below-pp').css('display', 'none');
+        // [CUSTOM] hide below-pp when initialized
+        $('#below-pp').css('display', 'none');
 
         var container = $(this);
         var lastScrolledDestiny;
@@ -165,6 +165,7 @@
         $.fn.pagepiling.setAllowScrolling(true);
 
         //creating the navigation dots
+        console.log("WAT");
         if (!$.isEmptyObject(options.navigation) ) {
             addVerticalNavigation();
         }
@@ -443,7 +444,7 @@
 
         //detecting any change on the URL to scroll to the given anchor link
         //(a way to detect back history button as we play with the hashes on the URL)
-        $(window).on('hashchange', hashChangeHandler);
+        //$(window).on('hashchange', hashChangeHandler); // [CUSTOM] commented out because we have our own hash manipulation
 
         /**
         * Actions to do when the hash (#) in the URL changes.
@@ -494,7 +495,8 @@
         /**
          * Sliding with arrow keys, both, vertical and horizontal
          */
-        $(document).keydown(function (e) {
+        $(document).keydown( keydownHandler );
+        function keydownHandler(e) {
             if(options.keyboardScrolling && !isMoving()){
                 //Moving the main page with the keyboard arrows if keyboard scrolling is enabled
                 switch (e.which) {
@@ -534,7 +536,7 @@
                         return; // exit this handler for other keys
                 }
             }
-        });
+        }
 
         /**
         * If `normalScrollElements` is used, the mouse wheel scrolling will scroll normally
@@ -786,6 +788,7 @@
         */
         function addVerticalNavigation(){
             container.append('<div id="pp-nav"><ul></ul></div>');
+            console.log("[DEBUG] addVerticalNavigation");
             var nav = $('#pp-nav');
 
             nav.css('color', options.navigation.textColor);

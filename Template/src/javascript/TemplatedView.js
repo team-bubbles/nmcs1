@@ -12,6 +12,7 @@ module.exports = Backbone.View.extend({
 	 */
 	initialize: function( options ) {
 		this.template = _.template( options.template, options.data );
+		this.routeId = options.routeId;
 	},
 
 	/*

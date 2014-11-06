@@ -17,7 +17,7 @@ module.exports = Backbone.View.extend({
     var animateIn = function () {
       view.$el.find('.content').removeClass('page-out');
       view.$el.find('.content').addClass('page-in');
-      view.$el.one( Prefixer.getTransitionend() + ' ' + Prefixer.getAnimationend(), function () {
+      view.$el.one( Prefixer.getAnimationend(), function () {
         if (_.isFunction(callback)) {
           callback();
         }
@@ -29,7 +29,7 @@ module.exports = Backbone.View.extend({
     var view = this;
     view.$el.find('.content').removeClass('page-in');
     view.$el.find('.content').addClass('page-out');
-    view.$el.one( Prefixer.getTransitionend() + ' ' + Prefixer.getAnimationend(), function () {
+    view.$el.one( Prefixer.getAnimationend(), function () {
       if (_.isFunction(callback)) {
         callback();
       }
