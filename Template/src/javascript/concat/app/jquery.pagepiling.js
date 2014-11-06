@@ -165,7 +165,6 @@
         $.fn.pagepiling.setAllowScrolling(true);
 
         //creating the navigation dots
-        console.log("WAT");
         if (!$.isEmptyObject(options.navigation) ) {
             addVerticalNavigation();
         }
@@ -346,7 +345,6 @@
             // if not, keep its display: none
             if ( v.sectionIndex < $('.pp-section').length - 1 ) $('#below-pp').css('display', 'none');
             else $('#below-pp').css('display', 'initial');
-            console.log("CHANGING SECTION");
         }
 
 
@@ -788,7 +786,6 @@
         */
         function addVerticalNavigation(){
             container.append('<div id="pp-nav"><ul></ul></div>');
-            console.log("[DEBUG] addVerticalNavigation");
             var nav = $('#pp-nav');
 
             nav.css('color', options.navigation.textColor);
