@@ -7,7 +7,7 @@
   $btnH: 3em
 
   .fullscreen-box
-    height: 100vh
+    height: 100%
 
   .project-header
     .header-content
@@ -116,7 +116,7 @@
         font-weight: $regular
         font-size: 14px
         color: #555
-          
+
   .wireframes
     background-color: #FFF
     .imgwrapper
@@ -177,7 +177,7 @@
       font-weight: $regular
       font-size: 14px
       color: #555
-      
+
   .userjourney
     text-align: center
     background-color: #f8f8f8
@@ -206,13 +206,15 @@
 
 // [TODO] EEEWWWWWWWWW
 #pro1
-  background-image: url(../img/project1/bg.jpg)
-  background-repeat: no-repeat
-  background-position: center
-  background-size: cover
+  background-color: white
+  .project-header
+    background-image: url(../img/project1/bg.jpg)
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
   .top
     color: #1C1C1C !important
-    
+
 #pro2
   background-color: #f1d937
   *
@@ -251,11 +253,13 @@
     color: #1C1C1C !important
 
 #pro8
-  background-color: #1C1C1C
+  .project-header
+    background-color: #1C1C1C
   .top
     color: #1C1C1C !important
 
 #pro9
-  background-color: #1C1C1C
+  .project-header
+    background-color: #1C1C1C
   .top
     color: #1C1C1C !important

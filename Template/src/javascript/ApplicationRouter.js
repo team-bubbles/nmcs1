@@ -48,9 +48,16 @@ module.exports = Backbone.Router.extend({
 		router.hideLoader(function(){
 			if (router.pastView) router.pastView.transitionOut();
 	    router.currentView.transitionIn(function(){
+				console.log("router.currentView.transitionIn complete");
 				if (router.pastView) {
 					// Detach the old view
 					router.pastView.remove();
+				}
+				// Start Page Piling
+				$('#below-pp').css('display', 'initial'); // reset hidden contents
+				if (router.currentView.routeId) {
+					console.log("Starting PagePiling on " + router.currentView.routeId);
+					$("#"+router.currentView.routeId).pagepiling({verticalCentered:false});
 				}
 			});
 		});
@@ -80,7 +87,7 @@ module.exports = Backbone.Router.extend({
       dataType: 'text',
       cache: true,
       success: function(data){
-        router.addedView = new TemplatedView({template:data, data:{}, routeId:type +"/"+ id});
+        router.addedView = new TemplatedView({template:data, data:{}, routeId:id});
         router.switchView(router.addedView);
       },
       error: function(){ // [TODO] Make this DRY

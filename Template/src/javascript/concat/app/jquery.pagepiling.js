@@ -10,6 +10,10 @@
 
 (function ($) {
     $.fn.pagepiling = function (options) {
+
+        // [CUSTOM] hide below-pp when initialized
+        $('#below-pp').css('display', 'none');
+
         var container = $(this);
         var lastScrolledDestiny;
         var lastAnimation = 0;
@@ -270,6 +274,8 @@
                 }
 
                 v.animateSection = v.activeSection;
+
+
             }
 
             //scrolling up (moving section down to the viewport)
@@ -290,6 +296,8 @@
 
             var timeNow = new Date().getTime();
             lastAnimation = timeNow;
+
+
         }
 
         /**
@@ -332,6 +340,11 @@
         function afterSectionLoads(v){
             //callback (afterLoad) if the site is not just resizing and readjusting the slides
             $.isFunction(options.afterLoad) && options.afterLoad.call(this, v.anchorLink, (v.sectionIndex + 1));
+
+            // [CUSTOM] If this is the last section, turn display of contents below pp on
+            // if not, keep its display: none
+            if ( v.sectionIndex < $('.pp-section').length - 1 ) $('#below-pp').css('display', 'none');
+            else $('#below-pp').css('display', 'initial');
         }
 
 
@@ -429,7 +442,7 @@
 
         //detecting any change on the URL to scroll to the given anchor link
         //(a way to detect back history button as we play with the hashes on the URL)
-        $(window).on('hashchange', hashChangeHandler);
+        //$(window).on('hashchange', hashChangeHandler); // [CUSTOM] commented out because we have our own hash manipulation
 
         /**
         * Actions to do when the hash (#) in the URL changes.
@@ -480,7 +493,8 @@
         /**
          * Sliding with arrow keys, both, vertical and horizontal
          */
-        $(document).keydown(function (e) {
+        $(document).keydown( keydownHandler );
+        function keydownHandler(e) {
             if(options.keyboardScrolling && !isMoving()){
                 //Moving the main page with the keyboard arrows if keyboard scrolling is enabled
                 switch (e.which) {
@@ -520,7 +534,7 @@
                         return; // exit this handler for other keys
                 }
             }
-        });
+        }
 
         /**
         * If `normalScrollElements` is used, the mouse wheel scrolling will scroll normally
@@ -771,7 +785,7 @@
         * Creates a vertical navigation bar.
         */
         function addVerticalNavigation(){
-            $('body').append('<div id="pp-nav"><ul></ul></div>');
+            container.append('<div id="pp-nav"><ul></ul></div>');
             var nav = $('#pp-nav');
 
             nav.css('color', options.navigation.textColor);
