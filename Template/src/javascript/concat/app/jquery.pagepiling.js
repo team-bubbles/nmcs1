@@ -520,16 +520,6 @@
                         $.fn.pagepiling.moveTo($('.pp-section').length);
                         break;
 
-                        //left
-                    case 37:
-                        $.fn.pagepiling.moveSectionUp();
-                        break;
-
-                        //right
-                    case 39:
-                        $.fn.pagepiling.moveSectionDown();
-                        break;
-
                     default:
                         return; // exit this handler for other keys
                 }

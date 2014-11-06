@@ -13,6 +13,22 @@ module.exports = Backbone.Router.extend({
 	initialize: function(el, evi) {
 		this.el = el;
 		this.EVI = evi;
+		this.currentId = 0;
+		this.projAmount = 9;
+		router = this;
+		this.EVI.on('requestContentChange', function(direction){
+			var id;
+			if (direction == 'left') {
+				id = parseInt(router.currentId) - 1;
+				if (id<1) id = router.projAmount;
+			}
+			if (direction == 'right') {
+				id = parseInt(router.currentId) + 1;
+				if (id>router.projAmount) id = 1;
+			}
+
+			router.changeView('project', "pro"+id);
+		});
 	},
 
 	currentView: null,
@@ -55,11 +71,16 @@ module.exports = Backbone.Router.extend({
 					// Detach the old view
 					router.pastView.remove();
 				}
+				// pub to event hub
+				router.EVI.emit('newContentIsIn', router.currentView.routeId);
 				// Start Page Piling
 				$('#below-pp').css('display', 'initial'); // reset hidden contents
 				if (router.currentView.routeId) {
 					console.log("Starting PagePiling on " + router.currentView.routeId);
 					$("#"+router.currentView.routeId).pagepiling({verticalCentered:false, normalScrollElements:'.finalcompswrapper'});
+					router.currentId = router.currentView.routeId[3]; // [TODO] shitty code
+				} else {
+					router.currentId = 0;
 				}
 			});
 		});
@@ -92,7 +113,7 @@ module.exports = Backbone.Router.extend({
         router.addedView = new TemplatedView({template:data, data:{}, routeId:id});
         router.switchView(router.addedView);
       },
-      error: function(){ // [TODO] Make this DRY
+      error: function(){ // [TODO] Make this DRY [TODO] finish up 404
         router.addedView = new OnPageView({template:"#404"});
         router.switchView(router.addedView);
       },

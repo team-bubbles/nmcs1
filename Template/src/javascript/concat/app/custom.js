@@ -22,20 +22,9 @@
             }
         };
 
-
-    //Arrow Buttons ---- Hook up the slider code here
-    document.querySelector("#leftArrow").onclick = function(){
-
-    };
-    document.querySelector("#rightArrow").onclick = function(){
-
-    };
-
     }
 
-
-
-    window.addEventListener("load", init);
+  window.addEventListener("load", init);
 }());
 
 function movetoEl(elID){
