@@ -59,7 +59,7 @@ module.exports = Backbone.Router.extend({
 				$('#below-pp').css('display', 'initial'); // reset hidden contents
 				if (router.currentView.routeId) {
 					console.log("Starting PagePiling on " + router.currentView.routeId);
-					$("#"+router.currentView.routeId).pagepiling({verticalCentered:false});
+					$("#"+router.currentView.routeId).pagepiling({verticalCentered:false, normalScrollElements:'.finalcompswrapper'});
 				}
 			});
 		});
