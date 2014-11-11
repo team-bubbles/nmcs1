@@ -84,7 +84,6 @@ This will run the `default` gulp task defined in `gulp/tasks/default.js`, which 
 Issues we ran in when working the flow on other machines, especially IGM lab machines:
 - xcode CLI tools neeeds to be installed on mac
 - image minify module breaks
-- sass 3.4.6 breaks. revert to 3.4.5 fixes it
 
  (╯°□°）╯︵ ┻━┻) 
 
