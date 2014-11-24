@@ -66,7 +66,6 @@ module.exports = Backbone.Router.extend({
 		router.hideLoader(function(){
 			if (router.pastView) router.pastView.transitionOut();
 	    router.currentView.transitionIn(function(){
-				console.log("router.currentView.transitionIn complete");
 				if (router.pastView) {
 					// Detach the old view
 					router.pastView.remove();
@@ -76,7 +75,6 @@ module.exports = Backbone.Router.extend({
 				// Start Page Piling
 				$('#below-pp').css('display', 'initial'); // reset hidden contents
 				if (router.currentView.routeId) {
-					console.log("Starting PagePiling on " + router.currentView.routeId);
 					$("#"+router.currentView.routeId).pagepiling({
 						verticalCentered:false,
 						normalScrollElements:'.finalcompswrapper',
@@ -105,7 +103,7 @@ module.exports = Backbone.Router.extend({
     {
       pUrl = 'header.html';
     } else {
-      pUrl = type +"/"+ id + '.html';
+      pUrl = '/' + type +'/'+ id + '.html';
     }
     //$('.loading-screen').fadeIn(400);
     // Make a reference to router itself
