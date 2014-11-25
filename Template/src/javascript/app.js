@@ -11,7 +11,7 @@ var ArrowNav = require('./ArrowNav');
 // Application Logic
 // http://artsy.github.io/blog/2012/06/25/replacing-hashbang-routes-with-pushstate/
 $(document).on("click", "a[href^='/']", function(event) {
-  var href, passThrough, url;
+  var href, url;
   href = $(event.currentTarget).attr('href');
   if (!event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
     event.preventDefault();
