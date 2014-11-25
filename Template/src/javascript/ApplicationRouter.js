@@ -26,8 +26,10 @@ module.exports = Backbone.Router.extend({
 				id = parseInt(router.currentId) + 1;
 				if (id>router.projAmount) id = 1;
 			}
-
-			router.changeView('project', "pro"+id);
+			Backbone.history.navigate('/project/pro'+id, {
+				trigger: true
+			});
+			//router.changeView('project', "pro"+id);
 		});
 	},
 
