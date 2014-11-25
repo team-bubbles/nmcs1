@@ -13,8 +13,7 @@ var ArrowNav = require('./ArrowNav');
 $(document).on("click", "a[href^='/']", function(event) {
   var href, passThrough, url;
   href = $(event.currentTarget).attr('href');
-  passThrough = href.indexOf('sign_out') >= 0;
-  if (!passThrough && !event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
+  if (!event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
     event.preventDefault();
     url = href.replace(/^\//, '').replace('\#\!\/', '');
     Backbone.history.navigate(url, {
