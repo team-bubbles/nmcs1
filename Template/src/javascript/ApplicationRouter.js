@@ -29,7 +29,6 @@ module.exports = Backbone.Router.extend({
 			Backbone.history.navigate('/project/pro'+id, {
 				trigger: true
 			});
-			//router.changeView('project', "pro"+id);
 		});
 	},
 
@@ -96,7 +95,7 @@ module.exports = Backbone.Router.extend({
 	},
 
 	/*
-	 * Change the active element in the topbar
+	 * Change the content loaded
 	 */
 	changeView: function(type, id){
     // Check for empty case
@@ -105,6 +104,8 @@ module.exports = Backbone.Router.extend({
     {
       pUrl = 'header.html';
     } else {
+			// [HACK] Avoid serverside url rewriting problem
+			if (type == 'project') type = 'proj';
       pUrl = '/' + type +'/'+ id + '.html';
     }
     //$('.loading-screen').fadeIn(400);
