@@ -26,6 +26,10 @@ module.exports = {
     src: src + "/htdocs/**",
     dest: dest
   },
+  htaccess: {
+    src: src + "/.htaccess",
+    dest: dest
+  },
   browserify: {
     // Enable source maps
     debug: true,

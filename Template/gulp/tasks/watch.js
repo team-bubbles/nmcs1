@@ -10,6 +10,7 @@ gulp.task('watch', ['setWatch', 'browserSync'], function() {
   gulp.watch(config.sass.src,   ['sass']);
   gulp.watch(config.images.src, ['images']);
   gulp.watch(config.markup.src, ['markup']);
+  gulp.watch(config.htaccess.src, ['htaccess']);
   config.scripts.forEach(function(bundleConfig){
     gulp.watch(bundleConfig.src, ['scripts']);
   });
