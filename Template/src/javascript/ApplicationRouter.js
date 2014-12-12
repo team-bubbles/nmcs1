@@ -78,6 +78,7 @@ module.exports = Backbone.Router.extend({
 				if (router.currentView.routeId) {
 					$("#"+router.currentView.routeId).pagepiling({
 						verticalCentered:false,
+						scrollingSpeed: 300,
 						normalScrollElements:'.finalcompswrapper',
 						navigation: {
 								'textColor': '#000',
