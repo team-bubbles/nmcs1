@@ -54,7 +54,6 @@ module.exports = {
   }, {
     src: [
       src + "/javascript/concat/app/jquery.js",
-      src + "/javascript/concat/app/jquery-scrollto.js",
       src + "/javascript/concat/app/custom.js",
       src + "/javascript/concat/app/jquery.pagepiling.js"
     ],

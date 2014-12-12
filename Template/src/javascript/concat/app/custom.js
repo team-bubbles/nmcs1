@@ -28,6 +28,5 @@
 }());
 
 function movetoEl(elID){
-    var el = elID;
-    $(el).ScrollTo();
+  $("html, body").animate({ scrollTop: $(elID).offset().top }, "slow");
 }
