@@ -1,9 +1,9 @@
 /*** View for contents preloaded onto the page ***/
 
 var Backbone = require('backbone');
-Backbone.View = require('./Backbone.View');
+TransitableView = require('./TransitableView');
 
-module.exports = Backbone.View.extend({
+module.exports = TransitableView.extend({
 
 	// Pass in and save the onPageView id
 	initialize: function(options) {

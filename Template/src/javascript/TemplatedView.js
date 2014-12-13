@@ -2,10 +2,10 @@
 
 var _ = require('underscore');
 var Backbone = require('backbone');
-Backbone.View = require('./Backbone.View');
+TransitableView = require('./TransitableView');
 
 
-module.exports = Backbone.View.extend({
+module.exports = TransitableView.extend({
 
 	// Initialize with the template-id
 	initialize: function( options ) {
@@ -17,8 +17,16 @@ module.exports = Backbone.View.extend({
 	render: function() {
 		var content = this.template;
 		$(this.el).html(content);
-		
+
 		return this;
+	},
+
+	transitionIn: function (callback) {
+		TransitableView.prototype.transitionIn.apply(this, arguments);
+	},
+
+	transitionOut: function (callback) {
+		TransitableView.prototype.transitionOut.apply(this, arguments);
 	}
 
 });
