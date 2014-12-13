@@ -1,62 +1,55 @@
 /* The 'homepage' header */
-#header
-  height: 100vh
-  background-color: $bg-color
+.header-content
+  position: absolute
+  bottom: 20%
+  left: 72px
+  *
+    color: white
 
-  #header-content
-    position: absolute
-    bottom: 20%
-    left: 72px
-    *
-      color: white
+  .title
+    font-weight: $bold
+    position: relative
+    font-size: 90px
+    line-height: 90px
+    //width: 100% Cause Overflow bug at lower resolutions
 
-    .title
-      font-weight: $bold
-      position: relative
-      font-size: 90px
-      line-height: 90px
-      //width: 100% Cause Overflow bug at lower resolutions
+    //Underline
+    &:after
+      content: ''
+      position: absolute
+      display: block
+      overflow: hidden
+      left: 0
+      bottom: -0.1em
+      width: 43px
+      height: 4px
+      background-color: #fff
 
-      //Underline
-      &:after
-        content: ''
-        position: absolute
-        display: block
-        overflow: hidden
-        left: 0
-        bottom: -0.1em
-        width: 43px
-        height: 4px
-        background-color: #fff
+  .subtitle
+    margin-top: 1.4em
+    font-size: 20px
 
-    .subtitle
-      margin-top: 1.4em
-      font-size: 20px
-
-    .button-3d
-      $btnW: 8em
-      $btnH: 3em
-      margin-top: 3em
-      cursor: pointer
-      transition: all 0.85s cubic-bezier(.17,.67,.14,.93)
-      transform-style: preserve-3d
-      transform-origin: 100% 50%
-      width: $btnW
+  .button-3d
+    $btnH: 3em
+    margin-top: 3em
+    cursor: pointer
+    transition: all 0.85s cubic-bezier(.17,.67,.14,.93)
+    transform-style: preserve-3d
+    transform-origin: 100% 50%
+    height: $btnH
+    &:hover
+      transform: rotateX(-90deg)
+    .side
+      box-sizing: border-box
+      position: absolute
+      display: inline-block
       height: $btnH
-      &:hover
-        transform: rotateX(-90deg)
-      .side
-        box-sizing: border-box
-        position: absolute
-        display: inline-block
-        width: $btnW
-        height: $btnH
-        text-align: center
-        padding-top: .7em
-      .top
-        background: #fff
-        color: $bg-color
-        transform: rotateX(90deg) translate3d(0, 0, $btnH/2)
-      .front
-        box-shadow: inset 0 0 0 2px #fff
-        transform: translate3d(0, 0, $btnH/2)
+      text-align: center
+      padding: .7em
+    .top
+      background: #fff
+      color: $bg-color
+      transform: rotateX(90deg) translate3d(0, 0, $btnH/2)
+    .front
+      box-shadow: inset 0 0 0 2px #fff
+      transform: translate3d(0, 0, $btnH/2)
