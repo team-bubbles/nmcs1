@@ -1,4 +1,5 @@
-// project detail views. Has Transitions
+// Extend backbone view to include
+// Transition functionality
 var Backbone, _, Prefixer;
 
 _ = require('underscore');
@@ -7,16 +8,14 @@ Backbone.$ = require('jquery');
 Prefixer = require('./Prefixer');
 
 module.exports = Backbone.View.extend({
-  remove: function() {
-		// Empty the element and remove it from the DOM while preserving events
-		$(this.el).empty().detach();
-		return this;
-	},
+  contentClass: 'content',
+  transitInClass: 'transit-in',
+  transitOutClass: 'transit-out',
   transitionIn: function (callback) {
     var view = this;
     var animateIn = function () {
-      view.$el.find('.content').removeClass('page-out');
-      view.$el.find('.content').addClass('page-in');
+      view.$el.find('.'+view.contentClass).removeClass(view.transitOutClass);
+      view.$el.find('.'+view.contentClass).addClass(view.transitInClass);
       view.$el.one( Prefixer.getAnimationend(), function () {
         if (_.isFunction(callback)) {
           callback();
@@ -27,13 +26,12 @@ module.exports = Backbone.View.extend({
   },
   transitionOut: function (callback) {
     var view = this;
-    view.$el.find('.content').removeClass('page-in');
-    view.$el.find('.content').addClass('page-out');
+    view.$el.find('.'+view.contentClass).removeClass(view.transitInClass);
+    view.$el.find('.'+view.contentClass).addClass(view.transitOutClass);
     view.$el.one( Prefixer.getAnimationend(), function () {
       if (_.isFunction(callback)) {
         callback();
       }
     });
-
   },
 });

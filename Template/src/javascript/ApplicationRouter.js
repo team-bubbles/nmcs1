@@ -41,7 +41,8 @@ module.exports = Backbone.Router.extend({
 		"*else": "notFound",
 	},
 
-	// Adds new DOM, and ANIMATES transition
+	// Adds new DOM, and
+	// ANIMATES transition
 	switchView: function(pView) {
 		// !important
 		var router = this;
@@ -121,11 +122,11 @@ module.exports = Backbone.Router.extend({
       dataType: 'text',
       cache: true,
       success: function(data){
-        router.addedView = new TemplatedView({template:data, data:{}, routeId:id});
+        router.addedView = new TemplatedView({template:data, routeId:id});
         router.switchView(router.addedView);
       },
       error: function(){ // [TODO] Make this DRY [TODO] finish up 404
-        router.addedView = new OnPageView({template:"#404"});
+        router.addedView = new OnPageView({id:"#404"});
         router.switchView(router.addedView);
       },
       progress: function(){
@@ -145,7 +146,7 @@ module.exports = Backbone.Router.extend({
 
 	notFound: function() {
 
-		this.addedView = new OnPageView({template:"#404"});
+		this.addedView = new OnPageView({id:"#404"});
 		this.switchView(this.addedView);
 	},
 
