@@ -12,16 +12,19 @@
 
     .title
       font-weight: $bold
+      position: relative
       font-size: 90px
       line-height: 90px
       //width: 100% Cause Overflow bug at lower resolutions
 
-      .underline
+      //Underline
+      &:after
+        content: ''
         position: absolute
         display: block
         overflow: hidden
         left: 0
-        top: 1.1em
+        bottom: -0.1em
         width: 43px
         height: 4px
         background-color: #fff
