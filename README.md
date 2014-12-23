@@ -1,7 +1,9 @@
-nmcs1
+Portfolio Template
 =====
 
-New Media Career Skill 1 Portfolio site.
+Portfolio Template built by a team of 5 RIT students. Kara Williams, Kaleigh Yang, Changbai Li, Jurian Hoff, Marco Fragale.
+
+I'm currently in the process of converting this into a WordPress Theme, or use WordPress as backend for this.
 
 How to use
 =====
