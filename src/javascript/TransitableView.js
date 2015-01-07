@@ -12,7 +12,6 @@ module.exports = Backbone.View.extend({
   transitInClass: 'transit-in',
   transitOutClass: 'transit-out',
   transitionIn: function (callback) {
-    console.log("[TransitableView] callback: " + callback);
     var view = this;
     var animateIn = function () {
       view.$el.find('.'+view.contentClass).removeClass(view.transitOutClass);

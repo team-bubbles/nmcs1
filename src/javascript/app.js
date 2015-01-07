@@ -9,12 +9,15 @@ var ApplicationRouter = require('./ApplicationRouter');
 var ArrowNav = require('./ArrowNav');
 
 // Application Logic
+
 // http://artsy.github.io/blog/2012/06/25/replacing-hashbang-routes-with-pushstate/
-$(document).on("click", "a[href^='/']", function(event) {
+// Using event delegation since html will be dynamic
+$(document).on("click", "a[href^='/']", function handleAnchorClick(event) {
   var href, url;
   href = $(event.currentTarget).attr('href');
   if (!event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
     event.preventDefault();
+    event.stopPropagation();
     url = href.replace(/^\//, '').replace('\#\!\/', '');
     Backbone.history.navigate(url, {
       trigger: true
@@ -24,12 +27,29 @@ $(document).on("click", "a[href^='/']", function(event) {
 });
 
 $(document).ready(function() {
-  for (var i = 0; i < $(".project").length; i++) {
-    $(".project")[i].onclick = function(){
-      var hash = $(this).attr('data-hash');
-      Backbone.history.navigate(hash, {trigger: true});
-    };
-  }
+  // Ignite Menu Btn
+  $("#menuBTN").click(function handleMenuBtnClick(){
+    if(this.className == ""){
+      document.getElementById("prBox").className = "overlayMenu open";
+      this.className = "active";
+    }
+    else if (this.className == "active"){
+      document.getElementById("prBox").className = "overlayMenu";
+      this.className = "";
+    }
+  });
+
+  // Ignite hash scrolls
+  $(document).on("click", ".scroll-to", function handleScrollToClick(event) {
+    var targetID = $(event.currentTarget).attr('href');
+    $("html, body").animate({ scrollTop: $(targetID).offset().top }, "slow");
+  });
+  // Ignite project grid clicks
+  $(document).on("click", ".project", function handleProjectClick(event) {
+    var hash = $(event.currentTarget).attr('data-hash');
+    Backbone.history.navigate(hash, {trigger: true});
+  });
+
   var EVI = new EventEmitter2();
   ArrowNav.init(EVI);
   new ApplicationRouter($('#content-wrapper'), EVI);

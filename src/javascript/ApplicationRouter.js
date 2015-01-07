@@ -47,7 +47,7 @@ module.exports = Backbone.Router.extend({
 		// !important
 		var router = this;
 		// Scroll to top
-		movetoEl('#content-wrapper');
+		$("html, body").animate({ scrollTop: $("#content-wrapper").offset().top }, "slow");
 
 		// if no previous view, just put it in already
 		var previous = router.currentView;
