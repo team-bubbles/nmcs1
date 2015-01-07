@@ -52,11 +52,7 @@ module.exports = {
     dest: dest + "/js",
     outputName: 'concatedHead.js',
   }, {
-    src: [
-      src + "/javascript/concat/app/jquery.js",
-      src + "/javascript/concat/app/custom.js",
-      src + "/javascript/concat/app/jquery.pagepiling.js"
-    ],
+    src: src + "/javascript/concat/app/*.js",
     dest: dest + "/js",
     outputName: 'concatedApp.js'
   }]
