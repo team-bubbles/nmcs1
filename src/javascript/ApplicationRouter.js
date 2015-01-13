@@ -3,8 +3,7 @@ Handles the url interpretation, ajax loading, and transition animation
 */
 var Backbone = require('backbone');
 var _ = require('underscore');
-var OnPageView = require('./OnPageView');
-var TemplatedView = require('./TemplatedView');
+var ContentView = require('./ContentView');
 var Prefixer = require('./Prefixer');
 var EventEmitter2 = require('eventemitter2').EventEmitter2;
 
@@ -76,7 +75,7 @@ module.exports = Backbone.Router.extend({
 				router.EVI.emit('newContentIsIn', router.currentView.routeId);
 				// Start Page Piling
 				$('#below-pp').css('display', 'initial'); // reset hidden contents
-				if (router.currentView.routeId) {
+				if ( ! _.isUndefined(router.currentView.routeId) ) {
 					$("#"+router.currentView.routeId).pagepiling({
 						verticalCentered:false,
 						scrollingSpeed: 300,
@@ -88,7 +87,7 @@ module.exports = Backbone.Router.extend({
 								'tooltips': ['Header', 'Mission & Goals', 'Wireframes', 'Moodboard', 'User Journey', 'Final Comps']
 						},
 						});
-					router.currentId = router.currentView.routeId[3]; // [TODO] shitty code
+					router.currentId = router.currentView.routeId[3]; // [0]:p, [1]:r, [2]:o.  [TODO] shitty code
 				} else {
 					router.currentId = 0;
 				}
@@ -122,11 +121,14 @@ module.exports = Backbone.Router.extend({
       dataType: 'text',
       cache: true,
       success: function(data){
-        router.addedView = new TemplatedView({template:data, routeId:id});
+        router.addedView = new ContentView({template:data, id:id});
+				router.addedView.routeId = id;
+				router.addedView.parseTemplate();
         router.switchView(router.addedView);
       },
       error: function(){ // [TODO] Make this DRY [TODO] finish up 404
-        router.addedView = new OnPageView({id:"#404"});
+        router.addedView = new ContentView({id:"404"});
+				router.addedView.getOnPageEl();
         router.switchView(router.addedView);
       },
       progress: function(){
@@ -139,14 +141,10 @@ module.exports = Backbone.Router.extend({
 		document.getElementById("menuBTN").className = "";
 	},
 
-  clear: function(){
-    this.addedView = new OnPageView({}); // renders empty html
-    this.switchView(this.addedView);
-  },
-
 	notFound: function() {
 
-		this.addedView = new OnPageView({id:"#404"});
+		this.addedView = new ContentView({id:"404"});
+		this.addedView.getOnPageEl();
 		this.switchView(this.addedView);
 	},
 

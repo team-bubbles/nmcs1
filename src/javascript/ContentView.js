@@ -11,6 +11,24 @@ module.exports = Backbone.View.extend({
   contentClass: 'content',
   transitInClass: 'transit-in',
   transitOutClass: 'transit-out',
+  
+  initialize: function( pOptions ) {
+    this.options = pOptions;
+  },
+  
+  parseTemplate: function() {
+    this.content = _.template( this.options.template, this.options.data );
+  },
+  
+  getOnPageEl: function() {
+    this.content = $('#'+this.options.id).html();
+  },
+  
+  render: function() {
+    $(this.el).html(this.content);
+    return this;
+  },
+  
   transitionIn: function (callback) {
     var view = this;
     var animateIn = function () {
