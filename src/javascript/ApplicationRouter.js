@@ -65,8 +65,22 @@ module.exports = Backbone.Router.extend({
 		router.currentView = pView;
 		// Make-disappear loader animation
 		router.hideLoader(function(){
-			if (router.pastView) router.pastView.transitionOut();
-	    router.currentView.transitionIn(function(){
+			// Determine transition direction
+			var direction = 'from-right'; // default
+			if (router.pastView) {
+				router.pastView.transitionOut();
+				if ( router.currentView.routeId < router.pastView.routeId ) {
+					direction = 'from-left';
+				}
+				// Exception: wrapping. [HACK]
+				if ( router.currentView.routeId == 'pro1' && router.pastView.routeId == 'pro'+router.projAmount ) {
+					direction = 'from-right';
+				}
+				if ( router.pastView.routeId == 'pro1' && router.currentView.routeId == 'pro'+router.projAmount ) {
+					direction = 'from-left';
+				}
+			}
+	    router.currentView.transitionIn( direction, function(){
 				if (router.pastView) {
 					// Detach the old view
 					router.pastView.remove();

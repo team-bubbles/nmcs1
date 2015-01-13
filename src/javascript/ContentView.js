@@ -29,11 +29,14 @@ module.exports = Backbone.View.extend({
     return this;
   },
   
-  transitionIn: function (callback) {
+  transitionIn: function (direction, callback) {
     var view = this;
     var animateIn = function () {
-      view.$el.find('.'+view.contentClass).removeClass(view.transitOutClass);
-      view.$el.find('.'+view.contentClass).addClass(view.transitInClass);
+      view.$el.find('.'+view.contentClass).removeClass(view.transitOutClass)
+                                          .addClass(view.transitInClass)
+                                          .removeClass('from-right')
+                                          .removeClass('from-left')
+                                          .addClass(direction);
       view.$el.one( Prefixer.getAnimationend(), function () {
         if (_.isFunction(callback)) {
           callback();
