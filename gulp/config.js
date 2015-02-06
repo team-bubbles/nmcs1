@@ -4,56 +4,43 @@ var src = './src';
 module.exports = {
   browserSync: {
     server: {
-      // We're serving the src folder as well
-      // for sass sourcemap linking
-      baseDir: [dest, src]
-    },
-    files: [
-      dest + "/**",
-      // Exclude Map files
-      "!" + dest + "/**.map"
-    ]
+      // Serve up our build folder
+      baseDir: dest
+    }
   },
   sass: {
-    src: src + "/sass/**/*.{sass, scss}",
-    dest: dest + "/css"
+    src: src + "/sass/*.{sass,scss}",
+    dest: dest,
+    settings: {
+      indentedSyntax: true, // Enable .sass syntax!
+      imagePath: '/images' // Used by the image-url helper
+    }
   },
   images: {
-    src: src + "/img/**",
-    dest: dest + "/img"
+    src: src + "/images/**",
+    dest: dest + "/images"
   },
   markup: {
     src: src + "/htdocs/**",
     dest: dest
   },
-  htaccess: {
-    src: src + "/.htaccess",
-    dest: dest
+  webfonts: {
+    src: src + "/webfonts/**",
+    dest: dest + "/webfonts"
   },
   browserify: {
-    // Enable source maps
-    debug: true,
-    // Additional file extentions to make optional
-    // extensions: ['.coffee', '.hbs'],
     // A separate bundle will be generated for each
     // bundle config in the list below
     bundleConfigs: [{
-      entries: './src/javascript/app.js',
-      dest: dest + "/js",
-      outputName: 'app.js'
-    }, {
-      entries: './src/javascript/head.js',
-      dest: dest + "/js",
-      outputName: 'head.js'
+      entries: src + '/javascript/app.js',
+      dest: dest,
+      outputName: 'app.js',
+      extensions: ['.hbs']
     }]
   },
-  scripts: [{
-    src: src + "/javascript/concat/head/*.js",
-    dest: dest + "/js",
-    outputName: 'concatedHead.js',
-  }, {
-    src: src + "/javascript/concat/app/*.js",
-    dest: dest + "/js",
-    outputName: 'concatedApp.js'
-  }]
+  production: {
+    cssSrc: dest + '/*.css',
+    jsSrc: dest + '/*.js',
+    dest: dest
+  }
 };

@@ -1,7 +1,7 @@
 var gulp = require('gulp');
-var config = require('../config').htaccess;
+var config = require('../config').webfonts;
 
-gulp.task('htaccess', function() {
+gulp.task('webfonts', function() {
   return gulp.src(config.src)
   .pipe(gulp.dest(config.dest));
 });
