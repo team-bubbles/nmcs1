@@ -2,7 +2,9 @@
 Handles the url interpretation, ajax loading, and transition animation
 */
 var Backbone = require('backbone');
+var $ = require('jquery');
 var _ = require('underscore');
+require('pagepiling');
 var ContentView = require('./ContentView');
 var Prefixer = require('./Prefixer');
 var EventEmitter2 = require('eventemitter2').EventEmitter2;

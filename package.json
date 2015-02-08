@@ -8,7 +8,8 @@
   },
   "browser": {
     "underscore": "backbone/node_modules/underscore",
-    "pagepiling": "./src/javascript/vendor/jquery.pagepiling.js"
+    "pagepiling": "./src/javascript/vendor/jquery.pagepiling.js",
+    "modernizr" : "./src/javascript/vendor/modernizr.js"
   },
   "browserify": {
     "transform": [
@@ -22,7 +23,8 @@
       "depends": [
         "jquery:$"
       ]
-    }
+    },
+    "modernizr": "Modernizr"
   },
   "devDependencies": {
     "browser-sync": "~1.3.6",

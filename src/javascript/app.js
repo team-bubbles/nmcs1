@@ -4,6 +4,7 @@ console.log('app.js loaded!');
 var _ = require('underscore');
 var Backbone = require('backbone');
 Backbone.$ = require ('jquery'); // Silly Linkage
+var $ = Backbone.$;
 var EventEmitter2 = require('eventemitter2').EventEmitter2;
 var ApplicationRouter = require('./ApplicationRouter');
 var ArrowNav = require('./ArrowNav');
