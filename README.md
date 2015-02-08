@@ -21,14 +21,12 @@ The template now uses a collection of tools, tasks, and workflows to make develo
 Technologies include:
 - [Browserify](http://browserify.org/) (with [browserify-shim](https://github.com/thlorenz/browserify-shim))
 - [Watchify](https://github.com/substack/watchify) (caching version of browserify for super fast rebuilds)
-- [SASS](http://sass-lang.com/) (with [compass](http://compass-style.org/) and [source maps](https://github.com/sindresorhus/gulp-ruby-sass#sourcemap)!)
-- [jQuery](http://jquery.com/) (from npm)
-- [Backbone](http://backbonejs.org/) (from npm)
+- [SASS](http://sass-lang.com/) (super fast libsass with [source maps](https://github.com/sindresorhus/gulp-ruby-sass#sourcemap), and [autoprefixer](https://github.com/sindresorhus/gulp-autoprefixer))
+- [CoffeeScript](http://coffeescript.org/) (with source maps!)
 - [BrowserSync](http://browsersync.io) for live reloading and a static server
-- Image optimization
-- Font Icon Generator
-- Error Notifications in Notification Center
-- Non common-js vendor code (like a jQuery plugin)
+- [Image optimization](https://www.npmjs.com/package/gulp-imagemin)
+- Error handling in the console [and in Notification Center](https://github.com/mikaelbr/gulp-notify)
+- Shimming non common-js vendor code with other dependencies (like a jQuery plugin)
 
 If you've never used Node or npm before, you'll need to install Node.
 If you use homebrew, do:
@@ -75,6 +73,10 @@ to a `node_modules` folder in your project directory.
 ```
 gulp
 ```
+
+##### For production, run `gulp production`.
+
+##### For icon font generation, run `gulp iconFont`.
 
 ### In Case It Breaks
 
