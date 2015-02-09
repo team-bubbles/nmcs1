@@ -9,7 +9,7 @@
   "browser": {
     "underscore": "backbone/node_modules/underscore",
     "pagepiling": "./src/javascript/vendor/jquery.pagepiling.js",
-    "modernizr" : "./src/javascript/vendor/modernizr.js"
+    "modernizr": "./src/javascript/vendor/modernizr.js"
   },
   "browserify": {
     "transform": [
@@ -52,6 +52,7 @@
   "dependencies": {
     "backbone": "^1.1.2",
     "eventemitter2": "^0.4.14",
+    "imagesloaded": "^3.1.8",
     "jquery": "~2.1.0"
   }
 }
