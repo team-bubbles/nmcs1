@@ -1,9 +1,8 @@
-console.log('app.js loaded!');
-
+/*** Entry Point ***/
 // Set up Module libs
 var _ = require('underscore');
 var Backbone = require('backbone');
-Backbone.$ = require ('jquery'); // Silly Linkage
+Backbone.$ = require('jquery'); // Silly Linkage
 var $ = Backbone.$;
 var EventEmitter2 = require('eventemitter2').EventEmitter2;
 var ApplicationRouter = require('./ApplicationRouter');
@@ -29,12 +28,11 @@ $(document).on("click", "a[href^='/']", function handleAnchorClick(event) {
 
 $(document).ready(function() {
   // Ignite Menu Btn
-  $("#menuBTN").click(function handleMenuBtnClick(){
-    if(this.className == ""){
+  $("#menuBTN").click(function handleMenuBtnClick() {
+    if (this.className === "") {
       document.getElementById("prBox").className = "overlayMenu open";
       this.className = "active";
-    }
-    else if (this.className == "active"){
+    } else if (this.className === "active") {
       document.getElementById("prBox").className = "overlayMenu";
       this.className = "";
     }
@@ -43,17 +41,23 @@ $(document).ready(function() {
   // Ignite hash scrolls
   $(document).on("click", ".scroll-to", function handleScrollToClick(event) {
     var targetID = $(event.currentTarget).attr('href');
-    $("html, body").animate({ scrollTop: $(targetID).offset().top }, "slow");
+    $("html, body").animate({
+      scrollTop: $(targetID).offset().top
+    }, "slow");
   });
   // Ignite project grid clicks
   $(document).on("click", ".project", function handleProjectClick(event) {
     var hash = $(event.currentTarget).attr('data-hash');
-    Backbone.history.navigate(hash, {trigger: true});
+    Backbone.history.navigate(hash, {
+      trigger: true
+    });
   });
 
   var EVI = new EventEmitter2();
   ArrowNav.init(EVI);
   new ApplicationRouter($('#content-wrapper'), EVI);
-  Backbone.history.start({pushState:true});
+  Backbone.history.start({
+    pushState: true
+  });
   //Backbone.history.start();
 });
