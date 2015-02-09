@@ -1,6 +1,13 @@
 $bg-color: #03A9F4
 $bg-color-rgba: rgba(79, 195, 247, 0.8)
 
+html
+  overflow-y: scroll
+  // ^ Forces a scrollbar, so the elements doesn't jump whne going into pagepiling
+
+body
+  font-family: $lato
+
 #LAYER_ALL
   position: absolute
   width: 100%
@@ -21,8 +28,3 @@ $bg-color-rgba: rgba(79, 195, 247, 0.8)
   position: absolute
   width: 100%
   z-index: 4
-
-body
-  font-family: $lato
-  // Just so it'll look nice
-  //min-width: 1250px
