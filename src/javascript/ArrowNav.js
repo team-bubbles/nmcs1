@@ -33,9 +33,9 @@ module.exports = {
     this.EVI.on('newContentIsIn', function(id){
       arrowNav.isLocked = false;
       if (id) {
-        $("#BTNControl").addClass('active');
+        $(".BTNControl").addClass('active');
       } else {
-        $("#BTNControl").removeClass('active');
+        $(".BTNControl").removeClass('active');
       }
     });
   },

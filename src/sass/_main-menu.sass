@@ -19,7 +19,7 @@ $menu-bg-color: #1A1A1A
 
 /* Button Style. Hiding the nav buttons for later implementation */
 
-#BTNControl
+.BTNControl
   position: fixed
   right: 2em
   padding-top: 46px
@@ -40,7 +40,7 @@ $menu-bg-color: #1A1A1A
   line-height: 40px
   background-repeat: no-repeat
 
-#menuBTN
+.menuBtn
   position: absolute
   top: 46px
   left: calc(100% + 60px)
@@ -85,7 +85,7 @@ $menu-bg-color: #1A1A1A
   margin-top: 3em
   visibility: hidden
 
-.overlayMenu
+.menu
   left: -80%
   position: fixed
   width: 80%
@@ -93,9 +93,8 @@ $menu-bg-color: #1A1A1A
   display: block
   background: $menu-bg-color
   transition: all 0.3s ease-in-out
-
-.overlayMenu.open
-  left: 0%
+  &.active
+    left: 0%
 
 nav
   font-size: 1.3em

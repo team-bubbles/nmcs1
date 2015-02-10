@@ -207,19 +207,17 @@ module.exports = Backbone.Router.extend({
   },
 
 	closeMenu: function() {
-		document.getElementById("prBox").className = "overlayMenu";
-		document.getElementById("menuBTN").className = "";
+		$('.menu').removeClass("active");
+    $('.menuBtn').removeClass("active");
 	},
 
   showLoader: function() {
-    $('#loader-wrapper').removeClass('inactive');
-    $('#loader-wrapper').addClass('active');
+    $('.loader-wrapper').addClass('active');
   },
   hideLoader: function(callback) {
     _.delay(function() {
-      $('#loader-wrapper').removeClass('active');
-      $('#loader-wrapper').addClass('inactive');
-      $('#loader-wrapper').one(Prefixer.getTransitionend() + ' ' + Prefixer.getAnimationend(), function() {
+      $('.loader-wrapper').removeClass('active');
+      $('.loader-wrapper').one(Prefixer.getTransitionend() + ' ' + Prefixer.getAnimationend(), function() {
         if (_.isFunction(callback)) {
           callback();
         }

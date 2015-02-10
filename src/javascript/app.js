@@ -28,14 +28,9 @@ $(document).on("click", "a[href^='/']", function handleAnchorClick(event) {
 
 $(document).ready(function() {
   // Ignite Menu Btn
-  $("#menuBTN").click(function handleMenuBtnClick() {
-    if (this.className === "") {
-      document.getElementById("prBox").className = "overlayMenu open";
-      this.className = "active";
-    } else if (this.className === "active") {
-      document.getElementById("prBox").className = "overlayMenu";
-      this.className = "";
-    }
+  $(".menuBtn").click(function handlemenuBtnClick() {
+    $(".menuBtn").toggleClass("active");
+    $(".menu").toggleClass("active");
   });
 
   // Ignite hash scrolls
