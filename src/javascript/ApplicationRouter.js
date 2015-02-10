@@ -38,15 +38,15 @@ module.exports = Backbone.Router.extend({
 
   routes: {
     "": "home",
-		"project": "projectGrid",
+    "project": "projectGrid",
     "project/:id": "projectDetail",
     "*else": "notFound",
   },
 
-	/**
-	 * Route handler for root url
-	 * Loads header into content
-	 */
+  /**
+   * Route handler for root url
+   * Loads header into content
+   */
   home: function() {
     console.log("Home");
     var router = this;
@@ -55,25 +55,25 @@ module.exports = Backbone.Router.extend({
     this.closeMenu();
   },
 
-	/**
-	 * Route handler for project
-	 * Shows project grid
-	 */
-	projectGrid: function(){
-		$('#below-pp').css('display', 'initial');
-		$("html, body").animate({
-			scrollTop: $("#projects").offset().top
-		}, "slow");
-		this.closeMenu();
-	},
+  /**
+   * Route handler for project
+   * Shows project grid
+   */
+  projectGrid: function() {
+    $('#below-pp').css('display', 'initial');
+    $("html, body").animate({
+      scrollTop: $("#projects").offset().top
+    }, "slow");
+    this.closeMenu();
+  },
 
   /**
    * Route handler
-	 * Loads and displays specific project details
+   * Loads and displays specific project details
    * @param {string} type URI 1st part
    * @param {string} id   URI 2nd part
    */
-	projectDetail: function(id) {
+  projectDetail: function(id) {
     console.log("Projects");
     // [HACK] Avoid serverside url rewriting problem
     var pUrl = '/proj/' + id + '.html';
@@ -206,10 +206,10 @@ module.exports = Backbone.Router.extend({
     });
   },
 
-	closeMenu: function() {
-		document.getElementById("prBox").className = "overlayMenu";
-		document.getElementById("menuBTN").className = "";
-	},
+  closeMenu: function() {
+    document.getElementById("prBox").className = "overlayMenu";
+    document.getElementById("menuBTN").className = "";
+  },
 
   showLoader: function() {
     $('#loader-wrapper').removeClass('inactive');

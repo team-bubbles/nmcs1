@@ -8,15 +8,15 @@ module.exports = {
     this.EVI = evi;
     //Arrow Buttons ---- Hook up the slider code here
     var arrowNav = this;
-    document.querySelector(".left.arrowbutton").onclick = function(){
+    document.querySelector(".left.arrowbutton").onclick = function() {
       arrowNav.navigate('left');
     };
-    document.querySelector(".right.arrowbutton").onclick = function(){
+    document.querySelector(".right.arrowbutton").onclick = function() {
       arrowNav.navigate('right');
     };
-    $(document).keydown( function(e){
+    $(document).keydown(function(e) {
       switch (e.which) {
-          //left
+        //left
         case 37:
           arrowNav.navigate('left');
           break;
@@ -30,7 +30,7 @@ module.exports = {
     });
 
     this.EVI = evi;
-    this.EVI.on('newContentIsIn', function(id){
+    this.EVI.on('newContentIsIn', function(id) {
       arrowNav.isLocked = false;
       if (id) {
         $("#BTNControl").addClass('active');
@@ -41,8 +41,7 @@ module.exports = {
   },
 
   navigate: function(direction) { // [TODO] USE ENUM YOU FUCKTARD
-    if (!this.isLocked)
-    {
+    if (!this.isLocked) {
       this.EVI.emit('requestContentChange', direction);
       this.isLocked = true;
     }
