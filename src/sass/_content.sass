@@ -1,3 +1,28 @@
 /* The ajax-loaded main content display area */
-#content-wrapper// For working with absolute position of inner contents
-position:relative height:100% overflow:hidden .content position:absolute width:100% height:100% overflow:hidden display:none z-index:1 animation-fill-mode:both animation-duration:0.7s &.transit-in display:initial z-index:1 animation-name:slideInRight &.from-right animation-name:slideInRight &.from-left animation-name:slideInLeft &.transit-out display:initial z-index:0
+#content-wrapper
+  // For working with absolute position of inner contents
+  position: relative
+  height: 100%
+  overflow: hidden
+
+.content
+  position: absolute
+  width: 100%
+  height: 100%
+  overflow: hidden
+  display: none
+  z-index: 1
+  animation-fill-mode: both
+  animation-duration: 0.7s
+
+  &.transit-in
+    display: initial
+    z-index: 1
+    animation-name: slideInRight
+  &.from-right
+    animation-name: slideInRight
+  &.from-left
+    animation-name: slideInLeft
+  &.transit-out
+    display: initial
+    z-index: 0

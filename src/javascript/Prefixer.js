@@ -5,18 +5,18 @@ var Modernizr = require('modernizr');
 
 module.exports = {
   transEndEventNames: {
-    'WebkitTransition': 'webkitTransitionEnd', // Saf 6, Android Browser
-    'transition': 'transitionend' // IE10, Opera, Chrome, FF 15+, Saf 7+
+    'WebkitTransition' : 'webkitTransitionEnd',// Saf 6, Android Browser
+    'transition'       : 'transitionend'       // IE10, Opera, Chrome, FF 15+, Saf 7+
   },
   animEndEventNames: {
-    'WebkitAnimation': 'webkitAnimationEnd',
-    'animation': 'animationend'
+    'WebkitAnimation' : 'webkitAnimationEnd',
+    'animation'       : 'animationend'
   },
 
-  getTransitionend: function() {
+  getTransitionend: function(){
     return this.transEndEventNames[Modernizr.prefixed('transition')];
   },
-  getAnimationend: function() {
+  getAnimationend: function(){
     return this.animEndEventNames[Modernizr.prefixed('animation')];
   },
 };
